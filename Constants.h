@@ -10,4 +10,4 @@
 #define TILE_HEIGHT 32
 
 
-const float MovementSpeed = 0.1;
+const float MovementSpeed = 0.2;
