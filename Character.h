@@ -27,7 +27,6 @@ private:
 	FACING mFacingDirection;
 	bool mMovingLeft;
 	bool mMovingRight;
-	bool mCanJump;
 
 protected:
 	SDL_Renderer* mRenderer;
@@ -36,6 +35,10 @@ protected:
 	virtual void MoveLeft(float deltaTime);
 	virtual void MoveRight(float deltaTime);
 	virtual void AddGravity(float deltaTime);
+	virtual void Jump();
 	float mCollisionRadius;
-
+	bool mCanJump;
+	bool mJumping;
+	bool mJumpForce;
 };
+

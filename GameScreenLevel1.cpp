@@ -63,7 +63,7 @@ bool GameScreenLevel1::SetUpLevel()
 	mMarioCharacter = new Character(mRenderer, "Images/Mario.png", Vector2D(64, 330), mLevelMap);
 	mLuigiCharacter = new Character(mRenderer, "Images/Luigi.png", Vector2D(100, 330), mLevelMap);
 }
-
+ 
 void GameScreenLevel1::SetLevelMap()
 {
 	int map[MAP_HEIGHT][MAP_WIDTH] = { { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },

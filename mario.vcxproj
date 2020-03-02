@@ -30,6 +30,7 @@
     <ClInclude Include="GamesScreenLevel1.h" />
     <ClInclude Include="GamesScreenManager.h" />
     <ClInclude Include="LevelMap.h" />
+    <ClInclude Include="MarioCharacter.h" />
     <ClInclude Include="Texture2D.h" />
   </ItemGroup>
   <ItemGroup>

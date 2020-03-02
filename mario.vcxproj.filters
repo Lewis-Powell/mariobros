@@ -45,6 +45,9 @@
     <ClInclude Include="LevelMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MarioCharacter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

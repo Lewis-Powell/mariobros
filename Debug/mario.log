@@ -1,1 +1,8 @@
-﻿  mario.vcxproj -> C:\Users\LJP67\source\repos\mario\Debug\mario.exe
+﻿  Character.cpp
+C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\LJP67\source\repos\mario\mario\Character.cpp(48,49): warning C4804: '-=': unsafe use of type 'bool' in operation
+C:\Users\LJP67\source\repos\mario\mario\Character.cpp(51,25): warning C4804: '<=': unsafe use of type 'bool' in operation
+C:\Users\LJP67\source\repos\mario\mario\Character.cpp(142,34): warning C4305: '=': truncation from 'float' to 'bool'
+C:\Users\LJP67\source\repos\mario\mario\Character.cpp(166,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\Character.cpp(166,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  mario.vcxproj -> C:\Users\LJP67\source\repos\mario\Debug\mario.exe

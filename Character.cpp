@@ -40,6 +40,20 @@ void Character::Render()
 
 void Character::Update(float deltaTime, SDL_Event e)
 {
+	if (mJumping)
+	{
+		//Adjust position
+		mPosition.y -= mJumpForce * deltaTime;
+		//Reduce the jump force
+		mJumpForce -= JUMP_FORCE_DECREMENT * deltaTime;
+		std::cout << mPosition.y << std::endl;
+		//Has jump force reduced to zero?
+		if (mJumpForce <= 0.0f)
+		{
+			mJumping = false;
+		}
+	}
+
 	//Collision Position Variables
 	int centralXPosition = (int)(mPosition.x + (mTexture->GetWidth() * 0.5f)) / TILE_WIDTH;
 	int footPosition = (int)(mPosition.y + mTexture->GetHeight()) / TILE_HEIGHT;
@@ -53,7 +67,9 @@ void Character::Update(float deltaTime, SDL_Event e)
 	{
 		//Collided with ground so can jump again
 		mCanJump = true;
+		mJumping = false;
 	}
+
 
 	if (mMovingLeft)
 	{
@@ -78,7 +94,8 @@ void Character::Update(float deltaTime, SDL_Event e)
 			mMovingRight = true;
 			break;
 		case SDLK_SPACE:
- 			mPosition.y -= 50;
+ 			//mPosition.y -= 50;
+			Jump();
 			break;
 		}
 		break;
@@ -111,8 +128,21 @@ void Character::MoveRight(float deltaTime)
 
 void Character::AddGravity(float deltaTime)
 {
-	mPosition.y += GRAVITY * deltaTime;
-	mCanJump = false;
+	if (mPosition.y <= SCREEN_HEIGHT-mTexture->GetHeight())
+	{
+		mPosition.y += GRAVITY * deltaTime;
+		mCanJump = false;
+	}
+}
+
+void Character::Jump()
+{
+	if (!mJumping)
+	{
+		mJumpForce = INITIAL_JUMP_FORCE;
+		mJumping = true;
+		mCanJump = false;
+	}
 }
 
 
