@@ -39,6 +39,6 @@ protected:
 	float mCollisionRadius;
 	bool mCanJump;
 	bool mJumping;
-	bool mJumpForce;
+	float mJumpForce;
 };
 

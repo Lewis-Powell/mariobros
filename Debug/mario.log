@@ -1,8 +1,18 @@
 ﻿  Character.cpp
 C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\LJP67\source\repos\mario\mario\Character.cpp(48,49): warning C4804: '-=': unsafe use of type 'bool' in operation
-C:\Users\LJP67\source\repos\mario\mario\Character.cpp(51,25): warning C4804: '<=': unsafe use of type 'bool' in operation
-C:\Users\LJP67\source\repos\mario\mario\Character.cpp(142,34): warning C4305: '=': truncation from 'float' to 'bool'
 C:\Users\LJP67\source\repos\mario\mario\Character.cpp(166,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\LJP67\source\repos\mario\mario\Character.cpp(166,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Collisions.cpp
+C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
+  GameScreenLevel1.cpp
+C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
+  GameScreenManager.cpp
+C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\LJP67\source\repos\mario\mario\GameScreenManager.cpp(36,14): warning C4101: 'tempGScreen': unreferenced local variable
+  LevelMap.cpp
+C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
+  main.cpp
+C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Generating Code...
+C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(65): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
   mario.vcxproj -> C:\Users\LJP67\source\repos\mario\Debug\mario.exe

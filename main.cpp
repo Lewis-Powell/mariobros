@@ -73,16 +73,7 @@ bool InitSDL()
 				cout << "SDL_Image could not initalise. Error: " << IMG_GetError();
 				return false;
 			}
-			//gTexture = new Texture2D(gRenderer);
-			//if (!gTexture->LoadFromFile("Images/test.bmp"))
-			//{
-				//return false;
-			//}
-				//LoadTextureFromFile("Images/test.bmp");
-			/*if (gTexture == NULL)
-			{
-				return false;
-			}*/
+
 
 		}
 		else
@@ -99,12 +90,9 @@ void CloseSDL()
 {
 	SDL_DestroyWindow(gWindow);
 	gWindow = NULL;
-	//FreeTexture();
 
 	SDL_DestroyRenderer(gRenderer);
 	gRenderer = NULL;
-	//delete gTexture;
-	//gTexture = NULL;
 
 	//Destroy the gmae screen manager
 	delete gameScreenManager;
