@@ -77,6 +77,9 @@ void Character::Update(float deltaTime, SDL_Event e)
 			mMovingLeft = false;
 			mMovingRight = true;
 			break;
+		case SDLK_SPACE:
+ 			mPosition.y -= 50;
+			break;
 		}
 		break;
 	case SDL_KEYUP:
