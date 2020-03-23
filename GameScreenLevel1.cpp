@@ -60,7 +60,7 @@ bool GameScreenLevel1::SetUpLevel()
 	SetLevelMap();
 
 	//Set up the player character
-	mMarioCharacter = new Character(mRenderer, "Images/Mario.png", Vector2D(64, 330), mLevelMap);
+	mMarioCharacter = new MarioCharacter(mRenderer, "Images/Mario.png", Vector2D(64, 330), mLevelMap);
 	mLuigiCharacter = new Character(mRenderer, "Images/Luigi.png", Vector2D(100, 330), mLevelMap);
 }
  

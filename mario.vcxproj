@@ -30,7 +30,6 @@
     <ClInclude Include="GamesScreenLevel1.h" />
     <ClInclude Include="GamesScreenManager.h" />
     <ClInclude Include="LevelMap.h" />
-    <ClInclude Include="MarioCharacter.h" />
     <ClInclude Include="Texture2D.h" />
   </ItemGroup>
   <ItemGroup>
@@ -41,6 +40,7 @@
     <ClCompile Include="GameScreenManager.cpp" />
     <ClCompile Include="LevelMap.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MarioCharacter.cpp" />
     <ClCompile Include="Texture2D.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

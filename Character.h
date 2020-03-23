@@ -24,9 +24,7 @@ public:
 	LevelMap* mCurrentLevelMap;
 
 private:
-	FACING mFacingDirection;
-	bool mMovingLeft;
-	bool mMovingRight;
+
 
 protected:
 	SDL_Renderer* mRenderer;
@@ -40,5 +38,20 @@ protected:
 	bool mCanJump;
 	bool mJumping;
 	float mJumpForce;
+	FACING mFacingDirection;
+	bool mMovingLeft;
+	bool mMovingRight;
 };
 
+class MarioCharacter : public Character
+{
+public:
+	MarioCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map);
+	~MarioCharacter();
+	void Update(float deltaTime, SDL_Event e);
+
+private:
+
+protected:
+
+};

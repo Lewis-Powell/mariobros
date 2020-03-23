@@ -1,19 +1,6 @@
-﻿  Character.cpp
-C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\LJP67\source\repos\mario\mario\Character.cpp(166,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\Character.cpp(166,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Collisions.cpp
-C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
-  GameScreen.cpp
-  GameScreenLevel1.cpp
-C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
-  GameScreenManager.cpp
-C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\LJP67\source\repos\mario\mario\GameScreenManager.cpp(36,14): warning C4101: 'tempGScreen': unreferenced local variable
-  LevelMap.cpp
-C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
-  main.cpp
-C:\Users\LJP67\source\repos\mario\mario\Constants.h(14,32): warning C4305: 'initializing': truncation from 'double' to 'float'
+﻿  MarioCharacter.cpp
+C:\Users\LJP67\source\repos\mario\mario\MarioCharacter.cpp(6,1): error C2512: 'Character': no appropriate default constructor available
+C:\Users\LJP67\source\repos\mario\mario\Character.h(12,7): message : see declaration of 'Character'
   Texture2D.cpp
 C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(12,6): warning C4101: 'mWidth': unreferenced local variable
 C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(13,6): warning C4101: 'mHeight': unreferenced local variable
@@ -22,5 +9,3 @@ C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(67,41): warning C4244: 'in
 C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(67,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
 C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(67,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   Generating Code...
-C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(65): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
-  mario.vcxproj -> C:\Users\LJP67\source\repos\mario\x64\Debug\mario.exe

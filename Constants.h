@@ -11,4 +11,4 @@
 #define JUMP_FORCE_DECREMENT 400.0f
 #define INITIAL_JUMP_FORCE 400.0f
 
-const float MovementSpeed = 0.2;
+const float MovementSpeed = 150.0f;
