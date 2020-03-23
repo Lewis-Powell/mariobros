@@ -21,14 +21,15 @@ bool InitSDL();
 void CloseSDL();
 bool Update();
 void Render();
+bool quit = false;
 //SDL_Texture* LoadTextureFromFile(string path);
 //void FreeTexture();
+
 
 
 int main(int argc, char* args[])
 {
 
-	bool quit = false;
 	if (InitSDL())
 	{
 		//Set up the game screen manager - starts with lvl1
@@ -41,10 +42,7 @@ int main(int argc, char* args[])
 			quit = Update();
 		}
 	}
-
 	CloseSDL();
-
-
 	return 0;
 }
 
