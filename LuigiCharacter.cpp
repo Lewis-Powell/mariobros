@@ -1,9 +1,9 @@
-#include "Character.h"
+#include "LuigiCharacter.h"
 #include "Texture2D.h"
 #include <string.h>
 
 
-MarioCharacter::MarioCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map) : Character(renderer, imagePath, startPosition, map)
+LuigiCharacter::LuigiCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map) : Character(renderer, imagePath, startPosition, map)
 {
 
 	//	MarioCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map) : Character(renderer, imagePath, startPosition, map);
@@ -24,13 +24,13 @@ MarioCharacter::MarioCharacter(SDL_Renderer* renderer, std::string imagePath, Ve
 	//mCollisionRadius = 15.0f;
 }
 
-MarioCharacter::~MarioCharacter()
+LuigiCharacter::~LuigiCharacter()
 {
 	mRenderer = NULL;
 }
 
 
-void MarioCharacter::Update(float deltaTime, SDL_Event e)
+void LuigiCharacter::Update(float deltaTime, SDL_Event e)
 {
 	if (mJumping)
 	{
@@ -74,20 +74,18 @@ void MarioCharacter::Update(float deltaTime, SDL_Event e)
 	SDL_PollEvent(&e);
 	switch (e.type)
 	{
-	case SDL_QUIT:
-		break;
 	case SDL_KEYDOWN:
 		switch (e.key.keysym.sym)
 		{
-		case SDLK_a:
+		case SDLK_LEFT:
 			mMovingRight = false;
 			mMovingLeft = true;
 			break;
-		case SDLK_d:
+		case SDLK_RIGHT:
 			mMovingLeft = false;
 			mMovingRight = true;
 			break;
-		case SDLK_SPACE:
+		case SDLK_BACKSLASH:
 			//mPosition.y -= 50;
 			Jump();
 			break;
@@ -96,14 +94,11 @@ void MarioCharacter::Update(float deltaTime, SDL_Event e)
 	case SDL_KEYUP:
 		switch (e.key.keysym.sym)
 		{
-		case SDLK_a:
+		case SDLK_LEFT:
 			mMovingLeft = false;
 			break;
-		case SDLK_d:
+		case SDLK_RIGHT:
 			mMovingRight = false;
-			break;
-		case SDLK_ESCAPE:
-			break;
 		}
 	}
 }

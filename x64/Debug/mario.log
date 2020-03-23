@@ -1,3 +1,2 @@
-﻿  MarioCharacter.cpp
-C:\Users\LJP67\source\repos\mario\mario\MarioCharacter.cpp(6,1): error C2512: 'Character': no appropriate default constructor available
-C:\Users\LJP67\source\repos\mario\mario\Character.h(12,7): message : see declaration of 'Character'
+﻿  main.cpp
+  mario.vcxproj -> C:\Users\LJP67\source\repos\mario\x64\Debug\mario.exe

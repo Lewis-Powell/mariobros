@@ -2,6 +2,7 @@
 #include "Texture2D.h"
 #include <string.h>
 
+//SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map
 Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map)
 {
 	mCurrentLevelMap = map;
@@ -20,6 +21,7 @@ Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D sta
 	//Change to see what is the best fit.
 	mCollisionRadius = 15.0f;
 }
+
 
 Character::~Character()
 {

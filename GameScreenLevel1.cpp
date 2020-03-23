@@ -2,6 +2,7 @@
 #include "GamesScreenLevel1.h"
 #include "Texture2D.h"
 #include "Collisions.h"
+#include "LuigiCharacter.h"
 
 
 GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer)
@@ -61,7 +62,7 @@ bool GameScreenLevel1::SetUpLevel()
 
 	//Set up the player character
 	mMarioCharacter = new MarioCharacter(mRenderer, "Images/Mario.png", Vector2D(64, 330), mLevelMap);
-	mLuigiCharacter = new Character(mRenderer, "Images/Luigi.png", Vector2D(100, 330), mLevelMap);
+	mLuigiCharacter = new LuigiCharacter(mRenderer, "Images/Luigi.png", Vector2D(100, 330), mLevelMap);
 }
  
 void GameScreenLevel1::SetLevelMap()

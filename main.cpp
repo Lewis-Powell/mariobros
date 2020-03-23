@@ -109,19 +109,19 @@ bool Update()
 
 	SDL_Event e;
 	SDL_PollEvent(&e);
-	switch (e.type)
-	{
-	case SDL_QUIT:
-		return true;
-		break;
-	case SDL_KEYUP:
-		switch (e.key.keysym.sym)
-		{
-		case SDLK_ESCAPE:
-			return true;
-		}
-		break;
-	}
+	//switch (e.type)
+	//{
+	//case SDL_QUIT:
+	//	return true;
+	//	break;
+	//case SDL_KEYUP:
+	//	switch (e.key.keysym.sym)
+	//	{
+	//	case SDLK_ESCAPE:
+	//		return true;
+	//	}
+	//	break;
+	//}
 
 	gameScreenManager->Update((float)(newTime - gOldTime) / 1000.0f, e);
 	gOldTime = newTime;
