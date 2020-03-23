@@ -1,11 +1,3 @@
 ﻿  MarioCharacter.cpp
 C:\Users\LJP67\source\repos\mario\mario\MarioCharacter.cpp(6,1): error C2512: 'Character': no appropriate default constructor available
 C:\Users\LJP67\source\repos\mario\mario\Character.h(12,7): message : see declaration of 'Character'
-  Texture2D.cpp
-C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(12,6): warning C4101: 'mWidth': unreferenced local variable
-C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(13,6): warning C4101: 'mHeight': unreferenced local variable
-C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(67,41): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(67,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(67,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(67,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  Generating Code...

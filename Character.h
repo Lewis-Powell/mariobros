@@ -13,7 +13,7 @@ class Character
 {
 public:
 	Character(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map);
-	~Character();
+	virtual ~Character();
 
 	virtual void Render();
 	virtual void Update(float deltaTime, SDL_Event e);

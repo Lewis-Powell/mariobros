@@ -5,6 +5,8 @@
 MarioCharacter::MarioCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map)
 {
 	Character::Character(renderer, imagePath, startPosition, map);
+
+	//	MarioCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map) : Character(renderer, imagePath, startPosition, map);
 	//mCurrentLevelMap = map;
 	//mRenderer = renderer;
 	//mPosition = startPosition;
