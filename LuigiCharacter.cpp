@@ -38,7 +38,7 @@ void LuigiCharacter::Update(float deltaTime, SDL_Event e)
 		mPosition.y -= mJumpForce * deltaTime;
 		//Reduce the jump force
 		mJumpForce -= JUMP_FORCE_DECREMENT * deltaTime;
-		std::cout << mPosition.y << std::endl;
+		//std::cout << mPosition.y << std::endl;
 		//Has jump force reduced to zero?
 		if (mJumpForce <= 0.0f)
 		{

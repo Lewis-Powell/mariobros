@@ -3,12 +3,14 @@
 #include "Commons.h"
 #include "GameScreen.h"
 #include "Character.h"
+#include "PowBlock.h"
 //#include "LevelMap.h"
 
 
 class Texture2D;
 class Character;
 class LevelMap;
+class PowBlock;
 
 class GameScreenLevel1 : GameScreen
 {

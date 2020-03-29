@@ -40,3 +40,11 @@ int LevelMap::GetTileAt(unsigned int h, unsigned int w)
 	}
 	return 0;
 }
+
+void LevelMap::ChangeTileAt(unsigned int h, unsigned int w, int newValue)
+{
+	if (h < MAP_HEIGHT && w < MAP_WIDTH)
+	{
+		mMap[h][w] = newValue;
+	}
+}

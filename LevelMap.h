@@ -10,6 +10,7 @@ public:
 	~LevelMap();
 
 	int GetTileAt(unsigned int h, unsigned int w);
+	void ChangeTileAt(unsigned int h, unsigned int w, int newValue);
 
 private:
 	int** mMap;

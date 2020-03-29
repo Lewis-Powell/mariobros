@@ -59,6 +59,7 @@ void Texture2D::Free()
 }
 
 
+
 //All rendering goes through this so if render problem probably here
 void Texture2D::Render(Vector2D newPosition, SDL_RendererFlip flip, double angle)
 {
@@ -69,3 +70,12 @@ void Texture2D::Render(Vector2D newPosition, SDL_RendererFlip flip, double angle
 	//SDL_RenderPresent(mRenderer);
 
 }
+
+
+void Texture2D::Render(SDL_Rect srcRect, SDL_Rect destRect, SDL_RendererFlip flip, double angle)
+{
+
+	//Render To Screen
+	SDL_RenderCopyEx(mRenderer, mTexture, &srcRect, &destRect, angle, NULL, flip);
+}
+

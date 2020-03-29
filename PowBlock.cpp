@@ -39,3 +39,30 @@ Rect2D PowBlock::GetCollisionBox()
 	//May need to switch width and height to mSingleSpriteWidth and mSingleSpriteHeight respectively
 	return Rect2D(mPosition.x, mPosition.y, mTexture->GetWidth(), mTexture->GetHeight());
 }
+
+void PowBlock::TakeAHit()
+{
+	mNumberOfHitsLeft--;
+	if (mNumberOfHitsLeft <= 0)
+	{
+		mNumberOfHitsLeft = 0;
+		mLevelMap->ChangeTileAt(8, 7, 0);
+		mLevelMap->ChangeTileAt(8, 8, 0);
+	}
+}
+
+void PowBlock::Render()
+{
+	if (mNumberOfHitsLeft > 0)
+	{
+		//Get Portion of the spritesheet you want to draw
+		int left = mSingleSpriteWidth * (mNumberOfHitsLeft - 1);
+		//{XPos, YPos, WidthOfSingleSprite, HeightOfSingleSprite}
+		SDL_Rect portionOfSingleSpritesheet = { left, 0, mSingleSpriteWidth, mSingleSpriteHeight };
+		//Determine where you want it drawn
+		SDL_Rect destRect = { (int)(mPosition.x), (int)(mPosition.y), mSingleSpriteWidth, mSingleSpriteHeight };
+		//Then Draw It
+		mTexture->Render(portionOfSingleSpritesheet, destRect, SDL_FLIP_NONE);
+
+	}
+}

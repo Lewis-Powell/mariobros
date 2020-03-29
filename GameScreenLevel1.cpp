@@ -22,6 +22,8 @@ GameScreenLevel1::~GameScreenLevel1()
 	mLuigiCharacter = NULL;
 	delete mLevelMap;
 	mLevelMap = NULL;
+	delete mPowBlock;
+	mPowBlock = NULL;
 }
 
 void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
@@ -39,15 +41,23 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 		std::cout << "Collided Box";
 	}
 
+	//Setting up PowBlock
+	mPowBlock = new PowBlock(mRenderer, mLevelMap);
+
 }
 
 void GameScreenLevel1::Render()
 {
 	//Draws Background
 	mBackgroundTexture->Render(Vector2D(0.0f,0.0f), SDL_FLIP_NONE);
+	
+	//Draws PowBlock
+	mPowBlock->Render();
+
 	//Draws Character
 	mMarioCharacter->Render();
 	mLuigiCharacter->Render();
+
 }
 
 bool GameScreenLevel1::SetUpLevel()
@@ -88,4 +98,12 @@ void GameScreenLevel1::SetLevelMap()
 	}
 	//Set up new map
 	mLevelMap = new LevelMap(map);
+}
+
+void GameScreenLevel1::UpdatePowBlock()
+{
+	if ((Collisions::Instance()->Box(mMarioCharacter->GetCollisionBox(), mPowBlock->GetCollisionBox())) && mPowBlock->IsAvailable())
+	{
+		std::cout << "Collided Box";
+	}
 }
