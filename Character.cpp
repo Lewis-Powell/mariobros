@@ -42,7 +42,7 @@ void Character::Render()
 
 void Character::Update(float deltaTime, SDL_Event e)
 {
-	//if (mJumping)
+	/*if (mJumping)
 	//{
 	//	//Adjust position
 	//	mPosition.y -= mJumpForce * deltaTime;
@@ -110,7 +110,7 @@ void Character::Update(float deltaTime, SDL_Event e)
 	//	case SDLK_d:
 	//		mMovingRight = false;
 	//	}
-	//}
+	//} */
 
 }
 

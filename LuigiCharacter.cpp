@@ -100,5 +100,6 @@ void LuigiCharacter::Update(float deltaTime, SDL_Event e)
 		case SDLK_RIGHT:
 			mMovingRight = false;
 			break;
+		}
 	}
 }
