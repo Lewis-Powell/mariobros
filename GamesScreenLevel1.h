@@ -21,6 +21,7 @@ private:
 	Character* mMarioCharacter;
 	Character* mLuigiCharacter;
 	LevelMap* mLevelMap;
+	PowBlock* mPowBlock;
 
 public:
 	GameScreenLevel1(SDL_Renderer* renderer);
@@ -28,4 +29,5 @@ public:
 
 	void Render();
 	void Update(float deltaTime, SDL_Event e);
+	void UpdatePowBlock();
 };

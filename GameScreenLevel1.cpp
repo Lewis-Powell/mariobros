@@ -104,6 +104,11 @@ void GameScreenLevel1::UpdatePowBlock()
 {
 	if ((Collisions::Instance()->Box(mMarioCharacter->GetCollisionBox(), mPowBlock->GetCollisionBox())) && mPowBlock->IsAvailable())
 	{
+		//Collided Whilst Jumping
+		
+	}
+	if ((Collisions::Instance()->Box(mLuigiCharacter->GetCollisionBox(), mPowBlock->GetCollisionBox())) && mPowBlock->IsAvailable())
+	{
 		std::cout << "Collided Box";
 	}
 }
