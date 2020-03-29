@@ -1,7 +1,7 @@
 #pragma once
 
 //Screen Dimensions
-#define SCREEN_WIDTH 660
+#define SCREEN_WIDTH 512
 #define SCREEN_HEIGHT 416
 #define MAP_HEIGHT 13
 #define MAP_WIDTH 165
