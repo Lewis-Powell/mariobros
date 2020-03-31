@@ -52,7 +52,7 @@ void GameScreenLevel1::Render()
 	mBackgroundTexture->Render(Vector2D(0.0f,0.0f), SDL_FLIP_NONE);
 	
 	//Draws PowBlock
-	mPowBlock->Render();
+	//mPowBlock->Render();
 
 	//Draws Character
 	mMarioCharacter->Render();
