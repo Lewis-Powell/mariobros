@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
+    <ClInclude Include="KoopaCharacter.h" />
     <ClInclude Include="Collisions.h" />
     <ClInclude Include="Commons.h" />
     <ClInclude Include="Constants.h" />
@@ -40,6 +41,7 @@
     <ClCompile Include="GameScreen.cpp" />
     <ClCompile Include="GameScreenLevel1.cpp" />
     <ClCompile Include="GameScreenManager.cpp" />
+    <ClCompile Include="KoopaCharacter.cpp" />
     <ClCompile Include="LevelMap.cpp" />
     <ClCompile Include="LuigiCharacter.cpp" />
     <ClCompile Include="main.cpp" />

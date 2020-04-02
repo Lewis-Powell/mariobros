@@ -13,6 +13,17 @@ LuigiCharacter::~LuigiCharacter()
 	mRenderer = NULL;
 }
 
+void LuigiCharacter::Render()
+{
+	if (mFacingDirection == FACING_RIGHT)
+	{
+		mTexture->Render(mPosition, SDL_FLIP_NONE);
+	}
+	else
+	{
+		mTexture->Render(mPosition, SDL_FLIP_HORIZONTAL);
+	}
+}
 
 void LuigiCharacter::Update(float deltaTime, SDL_Event e)
 {

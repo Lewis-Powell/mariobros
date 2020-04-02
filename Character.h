@@ -49,9 +49,10 @@ class MarioCharacter : public Character
 public:
 	MarioCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map);
 	~MarioCharacter();
-
+	void Update(float deltaTime, SDL_Event e);
+	void Render();
 private:
 
 protected:
-	void Update(float deltaTime, SDL_Event e);
+
 };

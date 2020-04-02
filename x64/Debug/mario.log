@@ -1,6 +1,15 @@
-﻿  GameScreenLevel1.cpp
+﻿  Character.cpp
+C:\Users\LJP67\source\repos\mario\mario\Character.cpp(168,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\Character.cpp(168,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Collisions.cpp
+  GameScreenLevel1.cpp
+  GameScreenManager.cpp
+C:\Users\LJP67\source\repos\mario\mario\GameScreenManager.cpp(36,14): warning C4101: 'tempGScreen': unreferenced local variable
+  KoopaCharacter.cpp
   LuigiCharacter.cpp
   MarioCharacter.cpp
   Generating Code...
 C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(96): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
-  mario.vcxproj -> C:\Users\LJP67\source\repos\mario\x64\Debug\mario.exe
+KoopaCharacter.obj : error LNK2019: unresolved external symbol "public: virtual __cdecl KoopaCharacter::~KoopaCharacter(void)" (??1KoopaCharacter@@UEAA@XZ) referenced in function "public: virtual void * __cdecl KoopaCharacter::`scalar deleting destructor'(unsigned int)" (??_GKoopaCharacter@@UEAAPEAXI@Z)
+KoopaCharacter.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl KoopaCharacter::Jump(void)" (?Jump@KoopaCharacter@@UEAAXXZ)
+C:\Users\LJP67\source\repos\mario\x64\Debug\mario.exe : fatal error LNK1120: 2 unresolved externals
