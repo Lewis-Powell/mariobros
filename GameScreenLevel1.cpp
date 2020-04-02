@@ -10,6 +10,7 @@ GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer
 	mRenderer = renderer;
 	mLevelMap = NULL;
 	SetUpLevel();
+
 }
 
 GameScreenLevel1::~GameScreenLevel1()
@@ -28,6 +29,22 @@ GameScreenLevel1::~GameScreenLevel1()
 
 void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 {
+	//Do Screenshake if required
+	if (mScreenshake)
+	{
+		mScreenshakeTime -= deltaTime;
+		mWobble++;
+		mBackgroundYPos = sin(mWobble);
+		mBackgroundYPos *= 3.0f;
+
+		//End the shake after the duration
+		if (mScreenshakeTime <= 0.0f)
+		{
+			mScreenshake = false;
+			mBackgroundYPos = 0.0f;
+		}
+	}
+
 	//Update the player
 	mMarioCharacter->Update(deltaTime, e);
 	mLuigiCharacter->Update(deltaTime, e);
@@ -41,18 +58,17 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 		std::cout << "Collided Box";
 	}
 
-	//Setting up PowBlock
-	mPowBlock = new PowBlock(mRenderer, mLevelMap);
+	UpdatePowBlock();
 
 }
 
 void GameScreenLevel1::Render()
 {
 	//Draws Background
-	mBackgroundTexture->Render(Vector2D(0.0f,0.0f), SDL_FLIP_NONE);
+	mBackgroundTexture->Render(Vector2D(0.0f,mBackgroundYPos), SDL_FLIP_NONE);
 	
 	//Draws PowBlock
-	//mPowBlock->Render();
+	mPowBlock->Render();
 
 	//Draws Character
 	mMarioCharacter->Render();
@@ -69,6 +85,10 @@ bool GameScreenLevel1::SetUpLevel()
 		return false;
 	}
 	SetLevelMap();
+
+	mPowBlock = new PowBlock(mRenderer, mLevelMap);
+	mScreenshake = false;
+	mBackgroundYPos = 0.0f;
 
 	//Set up the player character
 	mMarioCharacter = new MarioCharacter(mRenderer, "Images/Mario.png", Vector2D(64, 330), mLevelMap);
@@ -104,11 +124,30 @@ void GameScreenLevel1::UpdatePowBlock()
 {
 	if ((Collisions::Instance()->Box(mMarioCharacter->GetCollisionBox(), mPowBlock->GetCollisionBox())) && mPowBlock->IsAvailable())
 	{
-		//Collided Whilst Jumping
+		if (mMarioCharacter->IsJumping())
+		{
+			DoScreenshake();
+			mPowBlock->TakeAHit();
+			mMarioCharacter->CancelJump();
+		}
 		
 	}
 	if ((Collisions::Instance()->Box(mLuigiCharacter->GetCollisionBox(), mPowBlock->GetCollisionBox())) && mPowBlock->IsAvailable())
 	{
-		std::cout << "Collided Box";
+		if (mLuigiCharacter->IsJumping())
+		{
+			DoScreenshake();
+			mPowBlock->TakeAHit();
+			mLuigiCharacter->CancelJump();
+		}
+
 	}
+}
+
+void GameScreenLevel1::DoScreenshake()
+{
+	mScreenshake = true;
+	mScreenshakeTime = SCREENSHAKE_DURATION;
+	mWobble = 0.0f;
+
 }

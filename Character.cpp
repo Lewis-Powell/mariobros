@@ -167,3 +167,15 @@ Rect2D Character::GetCollisionBox()
 {
 	return Rect2D(mPosition.x, mPosition.y, mTexture->GetWidth(), mTexture->GetHeight());
 }
+
+bool Character::IsJumping()
+{
+	return mJumping;
+}
+
+void Character::CancelJump()
+{
+	mJumpForce = 0.0f;
+	mJumping = false;
+
+}

@@ -6,22 +6,6 @@
 MarioCharacter::MarioCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map) : Character(renderer, imagePath, startPosition, map)
 {
 
-	//	MarioCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map) : Character(renderer, imagePath, startPosition, map);
-	//mCurrentLevelMap = map;
-	//mRenderer = renderer;
-	//mPosition = startPosition;
-	//mTexture = new Texture2D(mRenderer);
-	//if (!mTexture->LoadFromFile(imagePath))
-	//{
-	//	std::cout << "Failed to load sprite texture!";
-	//	//return false;
-	//}
-	////SDL_Surface* pSurface = IMG_Load(path.c_str());
-	//mFacingDirection = FACING_RIGHT;
-	//mMovingLeft = false;
-	//mMovingRight = false;
-	////Change to see what is the best fit.
-	//mCollisionRadius = 15.0f;
 }
 
 MarioCharacter::~MarioCharacter()
@@ -38,7 +22,7 @@ void MarioCharacter::Update(float deltaTime, SDL_Event e)
 		mPosition.y -= mJumpForce * deltaTime;
 		//Reduce the jump force
 		mJumpForce -= JUMP_FORCE_DECREMENT * deltaTime;
-		std::cout << mPosition.y << std::endl;
+		//std::cout << mPosition.y << std::endl;
 		//Has jump force reduced to zero?
 		if (mJumpForce <= 0.0f)
 		{
@@ -105,5 +89,13 @@ void MarioCharacter::Update(float deltaTime, SDL_Event e)
 		case SDLK_ESCAPE:
 			break;
 		}
+	}
+	if (mPosition.x < 0)
+	{
+		mMovingLeft = false;
+	}
+	else if(mPosition.x > SCREEN_WIDTH - mTexture->GetWidth())
+	{
+		mMovingRight = false;
 	}
 }

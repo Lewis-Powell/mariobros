@@ -23,6 +23,13 @@ private:
 	LevelMap* mLevelMap;
 	PowBlock* mPowBlock;
 
+	bool mScreenshake;
+	float mScreenshakeTime;
+	float mWobble;
+	float mBackgroundYPos;
+
+	void DoScreenshake();
+
 public:
 	GameScreenLevel1(SDL_Renderer* renderer);
 	~GameScreenLevel1();

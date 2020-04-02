@@ -22,7 +22,8 @@ public:
 	float GetCollisionRadius();
 	Rect2D GetCollisionBox();
 	LevelMap* mCurrentLevelMap;
-
+	bool IsJumping();
+	void CancelJump();
 private:
 
 

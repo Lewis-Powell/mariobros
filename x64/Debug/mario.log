@@ -1,3 +1,6 @@
 ﻿  GameScreenLevel1.cpp
-C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(76): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
+  LuigiCharacter.cpp
+  MarioCharacter.cpp
+  Generating Code...
+C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(96): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
   mario.vcxproj -> C:\Users\LJP67\source\repos\mario\x64\Debug\mario.exe

@@ -10,5 +10,6 @@
 #define TILE_HEIGHT 32
 #define JUMP_FORCE_DECREMENT 400.0f
 #define INITIAL_JUMP_FORCE 400.0f
+#define SCREENSHAKE_DURATION 0.25f
 
 const float MovementSpeed = 150.0f;
