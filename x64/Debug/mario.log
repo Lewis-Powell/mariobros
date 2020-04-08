@@ -1,23 +1,28 @@
 ﻿  GameScreenLevel1.cpp
-C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(72,14): error C2027: use of undefined type 'KoopaCharacter'
-C:\Users\LJP67\source\repos\mario\mario\GamesScreenLevel1.h(15): message : see declaration of 'KoopaCharacter'
-C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(73,2): error C2143: syntax error: missing ';' before '}'
-C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(172,7): error C2027: use of undefined type 'KoopaCharacter'
-C:\Users\LJP67\source\repos\mario\mario\GamesScreenLevel1.h(15): message : see declaration of 'KoopaCharacter'
-C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(175,8): error C2027: use of undefined type 'KoopaCharacter'
-C:\Users\LJP67\source\repos\mario\mario\GamesScreenLevel1.h(15): message : see declaration of 'KoopaCharacter'
-C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(177,17): error C2027: use of undefined type 'KoopaCharacter'
-C:\Users\LJP67\source\repos\mario\mario\GamesScreenLevel1.h(15): message : see declaration of 'KoopaCharacter'
-C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(181,15): error C2027: use of undefined type 'KoopaCharacter'
-C:\Users\LJP67\source\repos\mario\mario\GamesScreenLevel1.h(15): message : see declaration of 'KoopaCharacter'
-C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(184,7): error C2027: use of undefined type 'KoopaCharacter'
-C:\Users\LJP67\source\repos\mario\mario\GamesScreenLevel1.h(15): message : see declaration of 'KoopaCharacter'
+C:\Users\LJP67\source\repos\mario\mario\GamesScreenLevel1.h(37,14): error C2065: 'KoopaCharacter': undeclared identifier
+C:\Users\LJP67\source\repos\mario\mario\GamesScreenLevel1.h(37,29): error C2059: syntax error: '>'
 C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(190,53): error C2065: 'mMarioCharacater': undeclared identifier
 C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(192,31): error C2039: 'SetState': is not a member of 'Character'
 C:\Users\LJP67\source\repos\mario\mario\Collisions.h(4): message : see declaration of 'Character'
 C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(192,32): error C2065: 'CHARACTERSTATE_PLAYER_DEATH': undeclared identifier
-C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(197,7): error C2027: use of undefined type 'KoopaCharacter'
-C:\Users\LJP67\source\repos\mario\mario\GamesScreenLevel1.h(15): message : see declaration of 'KoopaCharacter'
+C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(215,2): error C2065: 'koopaCharacter': undeclared identifier
+C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(215,37): error C2061: syntax error: identifier 'KoopaCharacter'
+C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(216,21): error C2065: 'koopaCharacter': undeclared identifier
   GameScreenManager.cpp
-C:\Users\LJP67\source\repos\mario\mario\GameScreenManager.cpp(36,14): warning C4101: 'tempGScreen': unreferenced local variable
+C:\Users\LJP67\source\repos\mario\mario\GamesScreenLevel1.h(37,14): error C2065: 'KoopaCharacter': undeclared identifier
+C:\Users\LJP67\source\repos\mario\mario\GamesScreenLevel1.h(37,29): error C2059: syntax error: '>'
+  KoopaCharacter.cpp
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(13,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(14,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(25,25): warning C4305: '=': truncation from 'float' to 'bool'
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(57,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(62,10): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(67,45): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(67,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(67,65): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(67,65): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(70,64): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(70,64): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(70,84): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(70,84): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   Generating Code...

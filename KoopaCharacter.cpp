@@ -16,7 +16,7 @@ KoopaCharacter::KoopaCharacter(SDL_Renderer* renderer, std::string imagePath, Ve
 
 KoopaCharacter::~KoopaCharacter()
 {
-
+	mRenderer = NULL;
 }
 
 void KoopaCharacter::TakeDamage()
