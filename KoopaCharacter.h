@@ -11,7 +11,7 @@ public:
 
 	void TakeDamage();
 	void Jump();
-	void Update();
+	void Update(float deltaTime, SDL_Event e);
 	void Render();
 
 

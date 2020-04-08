@@ -67,7 +67,7 @@ void MarioCharacter::Update(float deltaTime, SDL_Event e)
 	{
 		MoveRight(deltaTime);
 	}
-	SDL_PollEvent(&e);
+	//SDL_PollEvent(&e);
 	switch (e.type)
 	{
 	case SDL_QUIT:
@@ -84,7 +84,6 @@ void MarioCharacter::Update(float deltaTime, SDL_Event e)
 			mMovingRight = true;
 			break;
 		case SDLK_SPACE:
-			//mPosition.y -= 50;
 			Jump();
 			break;
 		}

@@ -66,7 +66,7 @@ void LuigiCharacter::Update(float deltaTime, SDL_Event e)
 	{
 		MoveRight(deltaTime);
 	}
-	SDL_PollEvent(&e);
+	//SDL_PollEvent(&e);
 	switch (e.type)
 	{
 	case SDL_KEYDOWN:
