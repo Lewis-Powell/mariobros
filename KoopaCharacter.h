@@ -13,6 +13,8 @@ public:
 	void Jump();
 	void Update(float deltaTime, SDL_Event e);
 	void Render();
+	bool GetAlive();
+	void SetAlive(bool alive);
 
 private:
 	float mSingleSpriteWidth;
@@ -21,6 +23,7 @@ private:
 	float mInjuredTime;
 	void FlipRightWayUp();
 	float mMovementSpeed;
+	bool mAlive;
 
 protected:
 	//void Update(float deltaTime, SDL_Event e);

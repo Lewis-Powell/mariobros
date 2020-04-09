@@ -3,6 +3,7 @@
 #include "Commons.h"
 #include "GameScreen.h"
 #include "Character.h"
+#include "KoopaCharacter.h"
 #include "PowBlock.h"
 #include <vector>
 //#include "LevelMap.h"

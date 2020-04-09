@@ -187,7 +187,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 			}
 			else
 			{
-				if (Collisions::Instance()->Circle(mEnemies[i], mMarioCharacater))
+				if (Collisions::Instance()->Circle(mEnemies[i], mMarioCharacter))
 				{
 					mMarioCharacter->SetState(CHARACTERSTATE_PLAYER_DEATH);
 				}
@@ -212,6 +212,6 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 void GameScreenLevel1::CreateKoopa(Vector2D position, FACING direction, float speed)
 {
 	//mMarioCharacter = new MarioCharacter(mRenderer, "Images/Mario.png", Vector2D(64, 330), mLevelMap);
-	koopaCharacter = new KoopaCharacter(mRenderer, "Images/Koopa.png", position, mLevelMap, direction);
+	KoopaCharacter* koopaCharacter = new KoopaCharacter(mRenderer, "Images/Koopa.png", position, mLevelMap, direction);
 	mEnemies.push_back(koopaCharacter);
 }
