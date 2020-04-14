@@ -66,21 +66,25 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 
 void GameScreenLevel1::Render()
 {
+
+
+	//Draws Background
+	mBackgroundTexture->Render(Vector2D(0.0f,mBackgroundYPos), SDL_FLIP_NONE);
+	
 	//Draw the enemies.
 	for (unsigned int i = 0; i < mEnemies.size(); i++)
 	{
 		mEnemies[i]->Render();
 	}
 
-	//Draws Background
-	mBackgroundTexture->Render(Vector2D(0.0f,mBackgroundYPos), SDL_FLIP_NONE);
-	
 	//Draws PowBlock
 	mPowBlock->Render();
+
 
 	//Draws Character
 	mMarioCharacter->Render();
 	mLuigiCharacter->Render();
+
 
 }
 
