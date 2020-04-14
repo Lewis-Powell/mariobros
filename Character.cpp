@@ -42,7 +42,7 @@ void Character::Render()
 
 void Character::Update(float deltaTime, SDL_Event e)
 {
-	/*if (mJumping)
+	if (mJumping)
 	//{
 	//	//Adjust position
 	//	mPosition.y -= mJumpForce * deltaTime;
@@ -72,15 +72,15 @@ void Character::Update(float deltaTime, SDL_Event e)
 	//	mJumping = false;
 	//}
 
+	if (mMovingLeft)
+	{
+		MoveLeft(deltaTime);
+	}
+	else if (mMovingRight)
+	{
+		MoveRight(deltaTime);
+	}
 
-	//if (mMovingLeft)
-	//{
-	//	MoveLeft(deltaTime);
-	//}
-	//else if (mMovingRight)
-	//{
-	//	MoveRight(deltaTime);
-	//}
 	//SDL_PollEvent(&e);
 	//switch (e.type)
 	//{
@@ -110,7 +110,7 @@ void Character::Update(float deltaTime, SDL_Event e)
 	//	case SDLK_d:
 	//		mMovingRight = false;
 	//	}
-	//} */
+	//}
 
 }
 

@@ -6,7 +6,7 @@ KoopaCharacter::KoopaCharacter(SDL_Renderer* renderer, std::string imagePath, Ve
 {
 	mAlive = true;
 	mFacingDirection = startFacing;
-	mMovementSpeed = MovementSpeed;
+	mMovementSpeed = KOOPA_SPEED;
 	mPosition = startPosition;
 	
 	mInjured = false;
@@ -22,7 +22,7 @@ KoopaCharacter::~KoopaCharacter()
 
 void KoopaCharacter::TakeDamage()
 {
-	if (mInjured = true)
+	if (mInjured == true)
 	{
 		//Insert code for killing the koopa
 		mAlive = false;
@@ -92,16 +92,19 @@ void KoopaCharacter::Render()
 
 void KoopaCharacter::Update(float deltaTime, SDL_Event e)
 {
+	Character::Update(deltaTime, e);
 	if (!mInjured)
 	{
 		//We are not injured so move
 		if (mFacingDirection == FACING_LEFT)
 		{
+			mPosition.x -= KOOPA_SPEED * deltaTime;
 			mMovingLeft = true;
 			mMovingRight = false;
 		}
 		else if (mFacingDirection == FACING_RIGHT)
 		{
+			mPosition.x + KOOPA_SPEED * deltaTime;
 			mMovingRight = true;
 			mMovingLeft = false;
 		}
@@ -116,7 +119,7 @@ void KoopaCharacter::Update(float deltaTime, SDL_Event e)
 		if (mInjuredTime <= 0.0)
 			FlipRightWayUp();
 	}
-
+	Render();
 }
 
 bool KoopaCharacter::GetAlive()

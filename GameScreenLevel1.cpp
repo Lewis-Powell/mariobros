@@ -101,6 +101,11 @@ bool GameScreenLevel1::SetUpLevel()
 	//Set up the player character
 	mMarioCharacter = new MarioCharacter(mRenderer, "Images/Mario.png", Vector2D(64, 330), mLevelMap);
 	mLuigiCharacter = new LuigiCharacter(mRenderer, "Images/Luigi.png", Vector2D(100, 330), mLevelMap);
+
+	//Set up enemies
+	CreateKoopa(Vector2D(150,32), FACING_RIGHT, KOOPA_SPEED);
+	CreateKoopa(Vector2D(325, 32), FACING_LEFT, KOOPA_SPEED);
+	
 }
  
 void GameScreenLevel1::SetLevelMap()
@@ -189,7 +194,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 			{
 				if (Collisions::Instance()->Circle(mEnemies[i], mMarioCharacter))
 				{
-					mMarioCharacter->SetState(CHARACTERSTATE_PLAYER_DEATH);
+					//mMarioCharacter->SetState(CHARACTERSTATE_PLAYER_DEATH);
 				}
 			}
 

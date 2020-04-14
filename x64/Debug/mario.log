@@ -1,21 +1,4 @@
-﻿  GameScreenLevel1.cpp
-C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(192,31): error C2039: 'SetState': is not a member of 'Character'
-C:\Users\LJP67\source\repos\mario\mario\Collisions.h(4): message : see declaration of 'Character'
-C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(192,32): error C2065: 'CHARACTERSTATE_PLAYER_DEATH': undeclared identifier
-  GameScreenManager.cpp
-C:\Users\LJP67\source\repos\mario\mario\GameScreenManager.cpp(36,14): warning C4101: 'tempGScreen': unreferenced local variable
-  KoopaCharacter.cpp
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(14,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(15,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(33,26): warning C4305: '=': truncation from 'float' to 'bool'
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(67,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(72,10): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(77,45): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(77,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(77,65): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(77,65): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(80,64): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(80,64): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(80,84): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(80,84): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
+﻿  Character.cpp
+C:\Users\LJP67\source\repos\mario\mario\Character.cpp(168,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\Character.cpp(168,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  mario.vcxproj -> C:\Users\LJP67\source\repos\mario\x64\Debug\mario.exe
