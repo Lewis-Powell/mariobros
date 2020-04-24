@@ -31,6 +31,7 @@ void KoopaCharacter::TakeDamage()
 	{
 		mInjured = true;
 		mInjured = INJURED_TIME;
+
 		Jump();
 	}
 
@@ -92,7 +93,16 @@ void KoopaCharacter::Render()
 
 void KoopaCharacter::Update(float deltaTime, SDL_Event e)
 {
-	Character::Update(deltaTime, e);
+	if (mMovingLeft)
+	{
+		MoveLeftK(deltaTime);
+	}
+	else if (mMovingRight)
+	{
+		MoveRightK(deltaTime);
+	}
+	
+
 	int centralXPosition = (int)(mPosition.x + (mTexture->GetWidth()/2 * 0.5f)) / TILE_WIDTH;
 	int footPosition = (int)(mPosition.y + mTexture->GetHeight()) / TILE_HEIGHT;
 
@@ -140,12 +150,12 @@ void KoopaCharacter::Update(float deltaTime, SDL_Event e)
 			FlipRightWayUp();
 	}
 	
-	if (mPosition.x < 0)
+	if (mPosition.x < 0 &&  mPosition.y < 350)
 	{
 		mFacingDirection = FACING_RIGHT;
 		mMovingLeft = false;
 	}
-	else if (mPosition.x > SCREEN_WIDTH - mTexture->GetWidth() / 2)
+	else if (mPosition.x > SCREEN_WIDTH - mTexture->GetWidth() / 2 && mPosition.y < 350)
 	{
 		mFacingDirection = FACING_LEFT;
 		mMovingRight = false;
@@ -160,4 +170,19 @@ bool KoopaCharacter::GetAlive()
 void KoopaCharacter::SetAlive(bool alive)
 {
 	mAlive = alive;
+}
+
+
+void KoopaCharacter::MoveLeftK(float deltaTime)
+{
+	mPosition.x += -KOOPA_SPEED * deltaTime;
+	mFacingDirection = FACING_LEFT;
+
+}
+
+void KoopaCharacter::MoveRightK(float deltaTime)
+{
+	mPosition.x += KOOPA_SPEED * deltaTime;
+	mFacingDirection = FACING_RIGHT;
+
 }

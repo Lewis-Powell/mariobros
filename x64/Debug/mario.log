@@ -1,15 +1,62 @@
-﻿  KoopaCharacter.cpp
+﻿  Character.cpp
+C:\Users\LJP67\source\repos\mario\mario\Character.cpp(109,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\Character.cpp(109,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CoinCharacter.cpp
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(8,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(9,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(26,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(36,45): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(36,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(36,65): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(36,65): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(39,64): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(39,64): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(39,84): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(39,84): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Collisions.cpp
+  GameScreen.cpp
+  GameScreenLevel1.cpp
+  GameScreenManager.cpp
+C:\Users\LJP67\source\repos\mario\mario\GameScreenManager.cpp(36,14): warning C4101: 'tempGScreen': unreferenced local variable
+  KoopaCharacter.cpp
 C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(14,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(15,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(33,26): warning C4305: '=': truncation from 'float' to 'bool'
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(67,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(72,10): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(77,45): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(77,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(77,65): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(77,65): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(80,64): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(80,64): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(80,84): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(80,84): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(68,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(73,10): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(78,45): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(78,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(78,65): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(78,65): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(81,64): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(81,64): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(81,84): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\KoopaCharacter.cpp(81,84): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  LevelMap.cpp
+  LuigiCharacter.cpp
+  main.cpp
+  MarioCharacter.cpp
+  PowBlock.cpp
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(16,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(17,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(40,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(40,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(59,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(61,52): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(61,52): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(61,72): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(61,72): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(63,65): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(63,65): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(63,85): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(63,85): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Texture2D.cpp
+C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(12,6): warning C4101: 'mWidth': unreferenced local variable
+C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(13,6): warning C4101: 'mHeight': unreferenced local variable
+C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(68,41): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(68,41): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(68,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\Texture2D.cpp(68,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(128): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
   mario.vcxproj -> C:\Users\LJP67\source\repos\mario\x64\Debug\mario.exe

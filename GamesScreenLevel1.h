@@ -4,8 +4,10 @@
 #include "GameScreen.h"
 #include "Character.h"
 #include "KoopaCharacter.h"
+#include "CoinCharacter.h"
 #include "PowBlock.h"
 #include <vector>
+//#include <time.h>
 //#include "LevelMap.h"
 
 
@@ -14,6 +16,7 @@ class Character;
 class LevelMap;
 class PowBlock;
 class KoopaCharacter;
+class CoinCharacter;
 
 class GameScreenLevel1 : GameScreen
 {
@@ -30,12 +33,15 @@ private:
 	float mScreenshakeTime;
 	float mWobble;
 	float mBackgroundYPos;
+	float Timer;
 
 	void DoScreenshake();
 
 
 	//Something wrong with this line?
 	std::vector<KoopaCharacter*> mEnemies;
+
+	std::vector<CoinCharacter*> mCoins;
 
 	
 
@@ -48,5 +54,8 @@ public:
 	void UpdatePowBlock();
 	void UpdateEnemies(float deltaTime, SDL_Event e);
 	void CreateKoopa(Vector2D position, FACING direction, float speed);
+	void UpdateCoins(float deltaTime, SDL_Event e);
+	void CreateCoins(Vector2D position);
+
 
 };

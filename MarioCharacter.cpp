@@ -70,8 +70,6 @@ void MarioCharacter::Update(float deltaTime, SDL_Event e)
 	//SDL_PollEvent(&e);
 	switch (e.type)
 	{
-	case SDL_QUIT:
-		break;
 	case SDL_KEYDOWN:
 		switch (e.key.keysym.sym)
 		{
@@ -96,8 +94,6 @@ void MarioCharacter::Update(float deltaTime, SDL_Event e)
 			break;
 		case SDLK_d:
 			mMovingRight = false;
-			break;
-		case SDLK_ESCAPE:
 			break;
 		}
 	}

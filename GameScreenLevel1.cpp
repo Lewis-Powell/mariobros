@@ -4,11 +4,15 @@
 #include "Collisions.h"
 #include "LuigiCharacter.h"
 
+float Timer2 = 10;
+
 
 GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer)
 {
 	mRenderer = renderer;
 	mLevelMap = NULL;
+	Timer = 0;
+	//float Timer2 = 10;
 	SetUpLevel();
 
 }
@@ -26,6 +30,7 @@ GameScreenLevel1::~GameScreenLevel1()
 	delete mPowBlock;
 	mPowBlock = NULL;
 	mEnemies.clear();
+	mCoins.clear();
 }
 
 void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
@@ -61,7 +66,7 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 
 	UpdatePowBlock();
 	UpdateEnemies(deltaTime, e);
-
+	UpdateCoins(deltaTime, e);
 }
 
 void GameScreenLevel1::Render()
@@ -75,6 +80,11 @@ void GameScreenLevel1::Render()
 	for (unsigned int i = 0; i < mEnemies.size(); i++)
 	{
 		mEnemies[i]->Render();
+	}
+
+	for (unsigned int i = 0; i < mCoins.size(); i++)
+	{
+		mCoins[i]->Render();
 	}
 
 	//Draws PowBlock
@@ -106,9 +116,14 @@ bool GameScreenLevel1::SetUpLevel()
 	mMarioCharacter = new MarioCharacter(mRenderer, "Images/Mario.png", Vector2D(64, 330), mLevelMap);
 	mLuigiCharacter = new LuigiCharacter(mRenderer, "Images/Luigi.png", Vector2D(100, 330), mLevelMap);
 
+
 	//Set up enemies
-	CreateKoopa(Vector2D(150,32), FACING_RIGHT, KOOPA_SPEED);
-	CreateKoopa(Vector2D(325, 32), FACING_LEFT, KOOPA_SPEED);
+	//CreateKoopa(Vector2D(100, 32), FACING_RIGHT, KOOPA_SPEED);
+	//CreateKoopa(Vector2D(375, 32), FACING_LEFT, KOOPA_SPEED);
+
+	CreateCoins(Vector2D(100, 64));
+	CreateCoins(Vector2D(375, 64));
+
 	
 }
  
@@ -166,11 +181,22 @@ void GameScreenLevel1::DoScreenshake()
 	mScreenshake = true;
 	mScreenshakeTime = SCREENSHAKE_DURATION;
 	mWobble = 0.0f;
+	for (int i = 0; i < mEnemies.size(); i++)
+	{
+		mEnemies[i]->TakeDamage();
+	}
 
 }
 
 void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 {
+	if (Timer <= 0)
+	{
+		//Set up enemies
+		CreateKoopa(Vector2D(100, 32), FACING_RIGHT, KOOPA_SPEED);
+		CreateKoopa(Vector2D(375, 32), FACING_LEFT, KOOPA_SPEED);
+		Timer = 30000;
+	}
 	//Update Enemies
 	if (!mEnemies.empty())
 	{
@@ -184,6 +210,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 				if (mEnemies[i]->GetPosition().x < (float)(-mEnemies[i]->GetCollisionBox().width * 0.5f) || mEnemies[i]->GetPosition().x > SCREEN_WIDTH - (float)(mEnemies[i]->GetCollisionBox().width * 0.55f))
 				{
 					mEnemies[i]->SetAlive(false);
+					std::cout << "1";
 				}
 			}
 			//Now do the update
@@ -215,6 +242,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 			mEnemies.erase(mEnemies.begin() + enemyIndexToDelete);
 		}
 	}
+	Timer--;
 }
 
 
@@ -223,4 +251,69 @@ void GameScreenLevel1::CreateKoopa(Vector2D position, FACING direction, float sp
 	//mMarioCharacter = new MarioCharacter(mRenderer, "Images/Mario.png", Vector2D(64, 330), mLevelMap);
 	KoopaCharacter* koopaCharacter = new KoopaCharacter(mRenderer, "Images/Koopa.png", position, mLevelMap, direction);
 	mEnemies.push_back(koopaCharacter);
+}
+
+
+void GameScreenLevel1::UpdateCoins(float deltaTime, SDL_Event e)
+{
+	if (Timer2 <= 0)
+	{
+		//Set up coins
+		CreateCoins(Vector2D(100, 32));
+		CreateCoins(Vector2D(375, 32));
+		Timer2 = 30000;
+	}
+
+	//Update Enemies
+	if (!mCoins.empty())
+	{
+		int coinIndexToDelete = -1;
+		for (unsigned int i = 0; i < mCoins.size(); i++)
+		{
+			//Check if enemy is on bottom row of tiles
+			if (mCoins[i]->GetPosition().y > 300.0f)
+			{
+				//Is enemy off screen to left/right?
+				if (mCoins[i]->GetPosition().x < (float)(-mCoins[i]->GetCollisionBox().width * 0.5f) || mCoins[i]->GetPosition().x > SCREEN_WIDTH - (float)(mCoins[i]->GetCollisionBox().width * 0.55f))
+				{
+					mCoins[i]->SetCollected(false);
+					std::cout << "1";
+				}
+			}
+			//Now do the update
+			mCoins[i]->Update(deltaTime, e);
+
+			//Check to see if the enemy collides with the player
+			if ((mCoins[i]->GetPosition().y > 300.0f || mCoins[i]->GetPosition().y <= 64.0f) && (mCoins[i]->GetPosition().x < 64.0f || mCoins[i]->GetPosition().x > SCREEN_WIDTH - 96.0f))
+			{
+				//Ignore the collisions if the enemy is behind a pipe?
+			}
+			else
+			{
+				if (Collisions::Instance()->Circle(mCoins[i], mMarioCharacter))
+				{
+					//mMarioCharacter->SetState(CHARACTERSTATE_PLAYER_DEATH);
+				}
+			}
+
+			//If the enemy is no longer alive the schedule it for deletion.
+			if (!mCoins[i]->GetCollected())
+			{
+				coinIndexToDelete = i;
+			}
+		}
+
+		//Remove dead enemies - 1 each update.
+		if (coinIndexToDelete != -1)
+		{
+			mCoins.erase(mCoins.begin() + coinIndexToDelete);
+		}
+	}
+	Timer2--;
+}
+
+void GameScreenLevel1::CreateCoins(Vector2D position)
+{
+	CoinCharacter* coinCharacter = new CoinCharacter(mRenderer, "Images/Coin.png", position, mLevelMap);
+	mCoins.push_back(coinCharacter);
 }

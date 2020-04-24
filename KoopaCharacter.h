@@ -26,5 +26,7 @@ private:
 	bool mAlive;
 
 protected:
+	void MoveLeftK(float deltaTime);
+	void MoveRightK(float deltaTime);
 	//void Update(float deltaTime, SDL_Event e);
 };

@@ -13,6 +13,6 @@
 #define SCREENSHAKE_DURATION 0.25f
 #define INJURED_TIME 2.5f
 #define INITIAL_JUMP_FORCE_SMALL 50.0f
-#define KOOPA_SPEED 96.0f
+#define KOOPA_SPEED 50.0f
 
 const float MovementSpeed = 150.0f;
