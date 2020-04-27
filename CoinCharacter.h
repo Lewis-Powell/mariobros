@@ -7,18 +7,25 @@ class CoinCharacter : public Character
 private:
 	float mSingleSpriteWidth;
 	float mSingleSpriteHeight;
-	bool mCollected;
+	bool mNotCollected;
+
+
+	bool mInjured;
+	float mInjuredTime;
+	float mMovementSpeed;
 
 
 protected:
 
 public:
-	CoinCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map);
+	CoinCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map, FACING startFacing);
 	~CoinCharacter();
 
 	void Update(float deltaTime, SDL_Event e);
 	void Render();
 	void TakeDamage();
+
+	//void TakeDamage();
 
 	bool GetCollected();
 	void SetCollected(bool collected);

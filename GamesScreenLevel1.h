@@ -55,7 +55,7 @@ public:
 	void UpdateEnemies(float deltaTime, SDL_Event e);
 	void CreateKoopa(Vector2D position, FACING direction, float speed);
 	void UpdateCoins(float deltaTime, SDL_Event e);
-	void CreateCoins(Vector2D position);
+	void CreateCoins(Vector2D position, FACING direction);
 
 
 };

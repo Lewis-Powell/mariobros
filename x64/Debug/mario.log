@@ -1,2 +1,14 @@
-﻿  LuigiCharacter.cpp
+﻿  CoinCharacter.cpp
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(15,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(16,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(35,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(40,10): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(45,45): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(45,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(45,65): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(45,65): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(48,64): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(48,64): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(48,84): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(48,84): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   mario.vcxproj -> C:\Users\LJP67\source\repos\mario\x64\Debug\mario.exe

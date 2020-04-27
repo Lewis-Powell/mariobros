@@ -24,6 +24,8 @@ public:
 	LevelMap* mCurrentLevelMap;
 	bool IsJumping();
 	void CancelJump();
+	int score;
+
 private:
 
 

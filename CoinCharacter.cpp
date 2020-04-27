@@ -1,9 +1,16 @@
 #include "CoinCharacter.h"
 
-CoinCharacter::CoinCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map) : Character(renderer, imagePath, startPosition, map)
+CoinCharacter::CoinCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map, FACING startFacing) : Character(renderer, imagePath, startPosition, map)
 {
 	
+	mNotCollected = true;
 	mPosition = startPosition;
+	
+	mFacingDirection = startFacing;
+	mMovementSpeed = KOOPA_SPEED;
+
+	mInjured = false;
+	
 
 	mSingleSpriteWidth = mTexture->GetWidth() / 3; //3 Sprites int 1 row
 	mSingleSpriteHeight = mTexture->GetHeight();
@@ -11,12 +18,14 @@ CoinCharacter::CoinCharacter(SDL_Renderer* renderer, std::string imagePath, Vect
 
 CoinCharacter::~CoinCharacter()
 {
-
+	mRenderer = NULL;
 }
 
 void CoinCharacter::TakeDamage()
 {
-	//score++
+	
+	score++;
+	std::cout << "Score: " << score << std::endl;
 }
 
 void CoinCharacter::Render()
@@ -26,10 +35,10 @@ void CoinCharacter::Render()
 	int left = 0.0f;
 
 	//If injured move the left position to be the left position of the 2nd image on spirte sheet.
-	/*if (mInjured)
+	if (mInjured)
 	{
 		left = mSingleSpriteWidth;
-	}*/
+	}
 
 	//Get the portion of the spritesheet you want to draw
 								//{XPos, YPos, WidthOfSingleSprite, HeightOfSingleSprite}
@@ -39,27 +48,42 @@ void CoinCharacter::Render()
 	SDL_Rect destRect = { (int)(mPosition.x), (int)(mPosition.y), mSingleSpriteWidth, mSingleSpriteHeight };
 
 	////Then draw it facing the correct direction.
-	//if (mFacingDirection == FACING_RIGHT)
-	//{
-	//	mTexture->Render(portionOfSpriteSheet, destRect, SDL_FLIP_NONE);
-	//}
-	//else
-	//{
-	//	mTexture->Render(portionOfSpriteSheet, destRect, SDL_FLIP_HORIZONTAL);
-	//}
+	if (mFacingDirection == FACING_RIGHT)
+	{
+		mTexture->Render(portionOfSpriteSheet, destRect, SDL_FLIP_NONE);
+	}
+	else
+	{
+		mTexture->Render(portionOfSpriteSheet, destRect, SDL_FLIP_HORIZONTAL);
+	}
 }
 
 bool CoinCharacter::GetCollected()
 {
-	return mCollected;
+	return mNotCollected;
 }
 
 void CoinCharacter::SetCollected(bool collected)
 {
-	mCollected = collected;
+	mNotCollected = collected;
 }
 
 void CoinCharacter::Update(float deltaTime, SDL_Event e)
 {
+
+	int centralXPosition = (int)(mPosition.x + (mTexture->GetWidth() / 2 * 0.5f)) / TILE_WIDTH;
+	int footPosition = (int)(mPosition.y + mTexture->GetHeight()) / TILE_HEIGHT;
+
+	//Deal with gravity
+	if (mCurrentLevelMap->GetTileAt(footPosition, centralXPosition) == 0)
+	{
+		AddGravity(deltaTime);
+	}
+	else
+	{
+		//Collided with ground so can jump again
+		mCanJump = true;
+		mJumping = false;
+	}
 
 }

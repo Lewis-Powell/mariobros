@@ -121,8 +121,8 @@ bool GameScreenLevel1::SetUpLevel()
 	//CreateKoopa(Vector2D(100, 32), FACING_RIGHT, KOOPA_SPEED);
 	//CreateKoopa(Vector2D(375, 32), FACING_LEFT, KOOPA_SPEED);
 
-	CreateCoins(Vector2D(100, 64));
-	CreateCoins(Vector2D(375, 64));
+	CreateCoins(Vector2D(200, 64), FACING_RIGHT);
+	CreateCoins(Vector2D(275, 64), FACING_LEFT);
 
 	
 }
@@ -259,8 +259,8 @@ void GameScreenLevel1::UpdateCoins(float deltaTime, SDL_Event e)
 	if (Timer2 <= 0)
 	{
 		//Set up coins
-		CreateCoins(Vector2D(100, 32));
-		CreateCoins(Vector2D(375, 32));
+		CreateCoins(Vector2D(100, 32), FACING_RIGHT);
+		CreateCoins(Vector2D(375, 32), FACING_LEFT);
 		Timer2 = 30000;
 	}
 
@@ -312,8 +312,8 @@ void GameScreenLevel1::UpdateCoins(float deltaTime, SDL_Event e)
 	Timer2--;
 }
 
-void GameScreenLevel1::CreateCoins(Vector2D position)
+void GameScreenLevel1::CreateCoins(Vector2D position, FACING direction)
 {
-	CoinCharacter* coinCharacter = new CoinCharacter(mRenderer, "Images/Coin.png", position, mLevelMap);
+	CoinCharacter* coinCharacter = new CoinCharacter(mRenderer, "Images/Coin.png", position, mLevelMap, direction);
 	mCoins.push_back(coinCharacter);
 }
