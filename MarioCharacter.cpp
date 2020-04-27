@@ -15,14 +15,7 @@ MarioCharacter::~MarioCharacter()
 
 void MarioCharacter::Render()
 {
-	if (mFacingDirection == FACING_RIGHT)
-	{
-		mTexture->Render(mPosition, SDL_FLIP_NONE);
-	}
-	else
-	{
-		mTexture->Render(mPosition, SDL_FLIP_HORIZONTAL);
-	}
+	Character::Render();
 }
 
 
@@ -59,14 +52,8 @@ void MarioCharacter::Update(float deltaTime, SDL_Event e)
 	}
 
 
-	if (mMovingLeft)
-	{
-		MoveLeft(deltaTime);
-	}
-	else if (mMovingRight)
-	{
-		MoveRight(deltaTime);
-	}
+	Character::Update(deltaTime, e);
+
 	//SDL_PollEvent(&e);
 	switch (e.type)
 	{

@@ -30,14 +30,14 @@ Character::~Character()
 
 void Character::Render()
 {
-	//if (mFacingDirection == FACING_RIGHT)
-	//{
-	//	mTexture->Render(mPosition, SDL_FLIP_NONE);
-	//}
-	//else
-	//{
-	//	mTexture->Render(mPosition, SDL_FLIP_HORIZONTAL);
-	//}
+	if (mFacingDirection == FACING_RIGHT)
+	{
+		mTexture->Render(mPosition, SDL_FLIP_NONE);
+	}
+	else
+	{
+		mTexture->Render(mPosition, SDL_FLIP_HORIZONTAL);
+	}
 }
 
 void Character::Update(float deltaTime, SDL_Event e)

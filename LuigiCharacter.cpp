@@ -15,14 +15,7 @@ LuigiCharacter::~LuigiCharacter()
 
 void LuigiCharacter::Render()
 {
-	if (mFacingDirection == FACING_RIGHT)
-	{
-		mTexture->Render(mPosition, SDL_FLIP_NONE);
-	}
-	else
-	{
-		mTexture->Render(mPosition, SDL_FLIP_HORIZONTAL);
-	}
+	Character::Render();
 }
 
 void LuigiCharacter::Update(float deltaTime, SDL_Event e)
@@ -58,15 +51,8 @@ void LuigiCharacter::Update(float deltaTime, SDL_Event e)
 	}
 
 
-	if (mMovingLeft)
-	{
-		MoveLeft(deltaTime);
-	}
-	else if (mMovingRight)
-	{
-		MoveRight(deltaTime);
-	}
-	//SDL_PollEvent(&e);
+	Character::Update(deltaTime, e);
+	
 	switch (e.type)
 	{
 	case SDL_KEYDOWN:
