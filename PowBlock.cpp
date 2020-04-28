@@ -37,7 +37,7 @@ bool PowBlock::IsAvailable()
 Rect2D PowBlock::GetCollisionBox()
 {
 	//May need to switch width and height to mSingleSpriteWidth and mSingleSpriteHeight respectively
-	return Rect2D(mPosition.x, mPosition.y, mTexture->GetWidth(), mTexture->GetHeight());
+	return Rect2D((mPosition.x), mPosition.y, mTexture->GetWidth()/3, mTexture->GetHeight());
 }
 
 void PowBlock::TakeAHit()
