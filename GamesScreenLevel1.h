@@ -7,8 +7,6 @@
 #include "CoinCharacter.h"
 #include "PowBlock.h"
 #include <vector>
-//#include <time.h>
-//#include "LevelMap.h"
 
 
 class Texture2D;
