@@ -14,5 +14,6 @@
 #define INJURED_TIME 2.5f
 #define INITIAL_JUMP_FORCE_SMALL 50.0f
 #define KOOPA_SPEED 50.0f
+#define ANIMATION_DELAY 0.5f
 
 const float MovementSpeed = 150.0f;

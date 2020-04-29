@@ -13,7 +13,10 @@ private:
 	bool mInjured;
 	float mInjuredTime;
 	float mMovementSpeed;
+	float Timer;
 
+	float mFrameDelay;
+	int mCurrentFrame;
 
 protected:
 

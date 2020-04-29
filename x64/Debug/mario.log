@@ -1,15 +1,22 @@
-﻿  PowBlock.cpp
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(16,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(17,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(40,87): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(40,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(59,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(61,52): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(61,52): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(61,72): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(61,72): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(63,65): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(63,65): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(63,85): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\LJP67\source\repos\mario\mario\PowBlock.cpp(63,85): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+﻿  CoinCharacter.cpp
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(15,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(16,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(36,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(46,54): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(46,54): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(46,73): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(46,73): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(46,93): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(46,93): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(49,64): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(49,64): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(49,84): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\LJP67\source\repos\mario\mario\CoinCharacter.cpp(49,84): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Collisions.cpp
+  GameScreenLevel1.cpp
+  GameScreenManager.cpp
+C:\Users\LJP67\source\repos\mario\mario\GameScreenManager.cpp(36,14): warning C4101: 'tempGScreen': unreferenced local variable
+  main.cpp
+  Generating Code...
+C:\Users\LJP67\source\repos\mario\mario\GameScreenLevel1.cpp(130): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
   mario.vcxproj -> C:\Users\LJP67\source\repos\mario\x64\Debug\mario.exe

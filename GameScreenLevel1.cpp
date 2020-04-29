@@ -72,9 +72,13 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 void GameScreenLevel1::Render()
 {
 
+	//Draws PowBlock
+	mPowBlock->Render();
 
-	//Draws Background
-	mBackgroundTexture->Render(Vector2D(0.0f,mBackgroundYPos), SDL_FLIP_NONE);
+
+	//Draws Character
+	mMarioCharacter->Render();
+	mLuigiCharacter->Render();
 	
 	//Draw the enemies.
 	for (unsigned int i = 0; i < mEnemies.size(); i++)
@@ -87,13 +91,11 @@ void GameScreenLevel1::Render()
 		mCoins[i]->Render();
 	}
 
-	//Draws PowBlock
-	mPowBlock->Render();
 
 
-	//Draws Character
-	mMarioCharacter->Render();
-	mLuigiCharacter->Render();
+	//Draws Background
+	mBackgroundTexture->Render(Vector2D(0.0f, mBackgroundYPos), SDL_FLIP_NONE);
+
 
 
 }
@@ -158,9 +160,9 @@ void GameScreenLevel1::UpdatePowBlock()
 	{
 		if (mMarioCharacter->IsJumping())
 		{
-			DoScreenshake();
 			mPowBlock->TakeAHit();
 			mMarioCharacter->CancelJump();
+			DoScreenshake();
 		}
 		
 	}
@@ -168,9 +170,9 @@ void GameScreenLevel1::UpdatePowBlock()
 	{
 		if (mLuigiCharacter->IsJumping())
 		{
-			DoScreenshake();
 			mPowBlock->TakeAHit();
 			mLuigiCharacter->CancelJump();
+			DoScreenshake();
 		}
 
 	}

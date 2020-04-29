@@ -30,8 +30,8 @@ void KoopaCharacter::TakeDamage()
 	else
 	{
 		mInjured = true;
-		mInjured = INJURED_TIME;
-
+		mInjuredTime = INJURED_TIME;
+		KoopaCharacter::Render();
 		Jump();
 	}
 
@@ -118,6 +118,7 @@ void KoopaCharacter::Update(float deltaTime, SDL_Event e)
 		mCanJump = true;
 		mJumping = false;
 	}
+
 	if (!mInjured)
 	{
 		if (mJumping == true)
@@ -128,13 +129,11 @@ void KoopaCharacter::Update(float deltaTime, SDL_Event e)
 		//We are not injured so move
 		else if (mFacingDirection == FACING_LEFT)
 		{
-			mPosition.x -= KOOPA_SPEED * deltaTime;
 			mMovingLeft = true;
 			mMovingRight = false;
 		}
 		else if (mFacingDirection == FACING_RIGHT)
 		{
-			mPosition.x += KOOPA_SPEED * deltaTime;
 			mMovingRight = true;
 			mMovingLeft = false;
 		}
@@ -146,8 +145,10 @@ void KoopaCharacter::Update(float deltaTime, SDL_Event e)
 		mMovingRight = false;
 		//Count down injured time
 		mInjuredTime -= deltaTime;
-		if (mInjuredTime <= 0.0)
+		if (mInjuredTime < 0.0)
+		{
 			FlipRightWayUp();
+		}
 	}
 	
 	if (mPosition.x < 0 &&  mPosition.y < 350)
