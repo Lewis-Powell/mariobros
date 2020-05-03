@@ -197,7 +197,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 		//Set up enemies
 		CreateKoopa(Vector2D(100, 32), FACING_RIGHT, KOOPA_SPEED);
 		CreateKoopa(Vector2D(375, 32), FACING_LEFT, KOOPA_SPEED);
-		Timer = 30000;
+		Timer = 50000;
 	}
 	//Update Enemies
 	if (!mEnemies.empty())
@@ -212,7 +212,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 				if (mEnemies[i]->GetPosition().x < (float)(-mEnemies[i]->GetCollisionBox().width * 0.5f) || mEnemies[i]->GetPosition().x > SCREEN_WIDTH - (float)(mEnemies[i]->GetCollisionBox().width * 0.55f))
 				{
 					mEnemies[i]->SetAlive(false);
-					std::cout << "1";
+					//std::cout << "1";
 				}
 			}
 			//Now do the update

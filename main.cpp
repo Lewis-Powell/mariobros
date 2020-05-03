@@ -5,6 +5,7 @@
 #include <string.h>
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_mixer.h>
 #include "GamesScreenManager.h"
 using namespace std;
 
@@ -21,7 +22,11 @@ bool InitSDL();
 void CloseSDL();
 bool Update();
 void Render();
+void LoadMusic(string path);
 bool quit = false;
+Mix_Music* gMusic = NULL;
+
+
 
 
 int main(int argc, char* args[])
@@ -76,6 +81,19 @@ bool InitSDL()
 			return false;
 		}
 	}
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+	{
+		cout << "Mixer could not initialise. Error: " << Mix_GetError();
+		return false;
+	}
+	else
+	{
+		LoadMusic("Music/Mario.mp3");
+		if (Mix_PlayingMusic() == 0)
+		{
+			Mix_PlayMusic(gMusic, -1);
+		}
+	}
 	return true;
 
 }
@@ -91,6 +109,10 @@ void CloseSDL()
 	//Destroy the gmae screen manager
 	delete gameScreenManager;
 	gameScreenManager = NULL;
+
+	//Release Music
+	Mix_FreeMusic(gMusic);
+	gMusic = NULL;
 
 	IMG_Quit();
 	SDL_Quit();
@@ -136,6 +158,16 @@ void Render()
 	
 	//Update Screen
 	SDL_RenderPresent(gRenderer);
+}
+
+
+void LoadMusic(string path)
+{
+	gMusic = Mix_LoadMUS(path.c_str());
+	if (gMusic == NULL)
+	{
+		cout << "Failed to load background music. Error: " << Mix_GetError() << endl;
+	}
 }
 
 //SDL_Texture* LoadTextureFromFile(string path)//C:\Users\LJP67\source\repos\mario\mario\Images\test.bmp)
