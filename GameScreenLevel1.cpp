@@ -62,11 +62,13 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 
 	if (Collisions::Instance()->Circle(mMarioCharacter, mLuigiCharacter))
 	{
-		std::cout << "Collided Circle";
+		//Debugging
+		//std::cout << "Collided Circle";
 	}
 	if (Collisions::Instance()->Box(mMarioCharacter->GetCollisionBox(), mLuigiCharacter->GetCollisionBox()))
 	{
-		std::cout << "Collided Box";
+		//Debugging
+		//std::cout << "Collided Box";
 	}
 
 	UpdatePowBlock();
@@ -133,9 +135,7 @@ bool GameScreenLevel1::SetUpLevel()
 	mLuigiCharacter = new LuigiCharacter(mRenderer, "Images/Luigi.png", Vector2D(100, 330), mLevelMap);
 	CharacterAlive = 2;
 
-	//Set up enemies
-	//CreateKoopa(Vector2D(100, 32), FACING_RIGHT, KOOPA_SPEED);
-	//CreateKoopa(Vector2D(375, 32), FACING_LEFT, KOOPA_SPEED);
+	//Set up Coins
 
 	CreateCoins(Vector2D(200, 64), FACING_RIGHT);
 	CreateCoins(Vector2D(290, 64), FACING_LEFT);

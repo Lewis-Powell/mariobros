@@ -25,14 +25,13 @@ void MarioCharacter::Update(float deltaTime, SDL_Event e)
 	if (Alive == true)
 	{
 
-
 		if (mJumping)
 		{
 			//Adjust position
 			mPosition.y -= mJumpForce * deltaTime;
 			//Reduce the jump force
 			mJumpForce -= JUMP_FORCE_DECREMENT * deltaTime;
-			//std::cout << mPosition.y << std::endl;
+
 			//Has jump force reduced to zero?
 			if (mJumpForce <= 0.0f)
 			{
@@ -59,7 +58,6 @@ void MarioCharacter::Update(float deltaTime, SDL_Event e)
 
 		Character::Update(deltaTime, e);
 
-		//SDL_PollEvent(&e);
 		switch (e.type)
 		{
 		case SDL_KEYDOWN:
