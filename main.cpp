@@ -135,6 +135,10 @@ bool Update()
 		{
 		case SDLK_ESCAPE:
 			return true;
+			break;
+		case SDLK_p:
+			gameScreenManager->ChangeScreen(SCREEN_LEVEL1);
+			break;
 		}
 		break;
 	}
