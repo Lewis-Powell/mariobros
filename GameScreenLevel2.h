@@ -2,20 +2,18 @@
 #include "GameScreen.h"
 #include "Texture2D.h"
 
-class GameScreenIntro : GameScreen
+class GameScreenLevel2 : GameScreen
 {
-
 public:
-	GameScreenIntro(SDL_Renderer* renderer);
-	~GameScreenIntro();
+	GameScreenLevel2(SDL_Renderer* renderer);
+	~GameScreenLevel2();
 
 	void Render();
+
+protected:
 
 private:
 	Texture2D* mBackgroundTexture;
 	bool SetUpLevel();
-protected:
-
-
 };
 

@@ -3,7 +3,11 @@
 #include "Texture2D.h"
 #include "Collisions.h"
 #include "LuigiCharacter.h"
-
+#include "GamesScreenManager.h"
+#include <fstream>
+#include <string>
+#include <iostream>
+using namespace std;
 
 
 GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer)
@@ -70,6 +74,10 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 
 	if (mMarioCharacter->GetScore() >= 10)
 	{
+		ofstream myfile;
+		myfile.open("TxtDocs/win.txt");
+		myfile << "10";
+		myfile.close();
 		std::cout << "You Got 10 Coins\n10 Coins!!!" << std::endl;
 	}
 }
