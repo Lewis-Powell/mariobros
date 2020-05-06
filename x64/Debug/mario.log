@@ -1,2 +1,3 @@
-﻿  main.cpp
+﻿  GameScreenManager.cpp
+C:\Users\LJP67\source\repos\mario\mario\GameScreenManager.cpp(37,14): warning C4101: 'tempGScreen': unreferenced local variable
   mario.vcxproj -> C:\Users\LJP67\source\repos\mario\x64\Debug\mario.exe
