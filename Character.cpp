@@ -52,7 +52,17 @@ void Character::Update(float deltaTime, SDL_Event e)
 		MoveRight(deltaTime);
 	}
 
-
+	if (mPosition.x < (float)(GetCollisionBox().width * 0.5f) && (mPosition.y < 64 || mPosition.y > 300))
+	{
+		mPosition.x = SCREEN_WIDTH-33;
+		mPosition.y = 15;
+	}
+	else if (mPosition.x > SCREEN_WIDTH - 32 && (mPosition.y < 64 || mPosition.y > 300))
+	{
+		mPosition.x = 30;
+		mPosition.y = 15;
+	//mPosition.x > SCREEN_WIDTH - mTexture->GetWidth()
+	}
 }
 
 void Character::MoveLeft(float deltaTime)

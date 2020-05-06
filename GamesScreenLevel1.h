@@ -36,7 +36,6 @@ private:
 	void DoScreenshake();
 
 
-	//Something wrong with this line?
 	std::vector<KoopaCharacter*> mEnemies;
 
 	std::vector<CoinCharacter*> mCoins;

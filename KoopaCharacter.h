@@ -15,6 +15,7 @@ public:
 	void Render();
 	bool GetAlive();
 	void SetAlive(bool alive);
+	bool GetInjured() { return mInjured; }
 
 private:
 	float mSingleSpriteWidth;

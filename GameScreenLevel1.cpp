@@ -4,7 +4,6 @@
 #include "Collisions.h"
 #include "LuigiCharacter.h"
 
-float Timer2 = 10;
 
 
 GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer)
@@ -12,7 +11,6 @@ GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer
 	mRenderer = renderer;
 	mLevelMap = NULL;
 	Timer = 0;
-	//float Timer2 = 10;
 	SetUpLevel();
 
 }
@@ -124,7 +122,19 @@ bool GameScreenLevel1::SetUpLevel()
 	//CreateKoopa(Vector2D(375, 32), FACING_LEFT, KOOPA_SPEED);
 
 	CreateCoins(Vector2D(200, 64), FACING_RIGHT);
-	CreateCoins(Vector2D(275, 64), FACING_LEFT);
+	CreateCoins(Vector2D(290, 64), FACING_LEFT);
+	
+	CreateCoins(Vector2D(150, 30), FACING_RIGHT);
+	CreateCoins(Vector2D(340, 30), FACING_LEFT);
+	
+	CreateCoins(Vector2D(415, 128), FACING_RIGHT);
+	CreateCoins(Vector2D(75, 128), FACING_LEFT);
+	
+	CreateCoins(Vector2D(100, 196), FACING_RIGHT);
+	CreateCoins(Vector2D(390, 196), FACING_LEFT);
+	
+	CreateCoins(Vector2D(200, 256), FACING_RIGHT);
+	CreateCoins(Vector2D(290, 256), FACING_LEFT);
 
 	
 }
@@ -196,8 +206,8 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 	if (Timer <= 0)
 	{
 		//Set up enemies
-		CreateKoopa(Vector2D(100, 32), FACING_RIGHT, KOOPA_SPEED);
-		CreateKoopa(Vector2D(375, 32), FACING_LEFT, KOOPA_SPEED);
+		CreateKoopa(Vector2D(30, 32), FACING_RIGHT, KOOPA_SPEED);
+		CreateKoopa(Vector2D(445, 32), FACING_LEFT, KOOPA_SPEED);
 		Timer = 50000;
 	}
 	//Update Enemies
@@ -212,8 +222,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 				//Is enemy off screen to left/right?
 				if (mEnemies[i]->GetPosition().x < (float)(-mEnemies[i]->GetCollisionBox().width * 0.5f) || mEnemies[i]->GetPosition().x > SCREEN_WIDTH - (float)(mEnemies[i]->GetCollisionBox().width * 0.55f))
 				{
-					mEnemies[i]->SetAlive(false);
-					//std::cout << "1";
+
 				}
 			}
 			//Now do the update
@@ -228,6 +237,32 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 			{
 				if (Collisions::Instance()->Circle(mEnemies[i], mMarioCharacter))
 				{
+					if (mEnemies[i]->GetInjured())
+					{
+						mEnemies[i]->TakeDamage();
+						mMarioCharacter->IncreaseScore();
+					}
+					else
+					{
+
+					}
+
+					//mEnemies[i]->TakeDamage();
+					//mMarioCharacter->SetState(CHARACTERSTATE_PLAYER_DEATH);
+				}
+				if (Collisions::Instance()->Circle(mEnemies[i], mLuigiCharacter))
+				{
+					if (mEnemies[i]->GetInjured())
+					{
+						mEnemies[i]->TakeDamage();
+						mMarioCharacter->IncreaseScore();
+					}
+					else
+					{
+
+					}
+
+					//mEnemies[i]->TakeDamage();
 					//mMarioCharacter->SetState(CHARACTERSTATE_PLAYER_DEATH);
 				}
 			}
@@ -243,7 +278,6 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 		if (enemyIndexToDelete != -1)
 		{
 			mEnemies.erase(mEnemies.begin() + enemyIndexToDelete);
-			mMarioCharacter->IncreaseScore();
 		}
 	}
 	Timer--;
@@ -260,13 +294,6 @@ void GameScreenLevel1::CreateKoopa(Vector2D position, FACING direction, float sp
 
 void GameScreenLevel1::UpdateCoins(float deltaTime, SDL_Event e)
 {
-	if (Timer2 <= 0)
-	{
-		//Set up coins
-		CreateCoins(Vector2D(100, 32), FACING_RIGHT);
-		CreateCoins(Vector2D(375, 32), FACING_LEFT);
-		Timer2 = 30000;
-	}
 
 	//Update Enemies
 	if (!mCoins.empty())
@@ -296,6 +323,7 @@ void GameScreenLevel1::UpdateCoins(float deltaTime, SDL_Event e)
 			{
 				if (Collisions::Instance()->Circle(mCoins[i], mMarioCharacter))
 				{
+					mCoins[i]->SetCollected(false);
 					//mMarioCharacter->SetState(CHARACTERSTATE_PLAYER_DEATH);
 				}
 			}
@@ -311,9 +339,9 @@ void GameScreenLevel1::UpdateCoins(float deltaTime, SDL_Event e)
 		if (coinIndexToDelete != -1)
 		{
 			mCoins.erase(mCoins.begin() + coinIndexToDelete);
+			mMarioCharacter->IncreaseScore();
 		}
 	}
-	Timer2--;
 }
 
 void GameScreenLevel1::CreateCoins(Vector2D position, FACING direction)
