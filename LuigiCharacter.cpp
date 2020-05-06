@@ -20,75 +20,80 @@ void LuigiCharacter::Render()
 
 void LuigiCharacter::Update(float deltaTime, SDL_Event e)
 {
-	if (mJumping)
+	if (Alive == true)
 	{
-		//Adjust position
-		mPosition.y -= mJumpForce * deltaTime;
-		//Reduce the jump force
-		mJumpForce -= JUMP_FORCE_DECREMENT * deltaTime;
-		//std::cout << mPosition.y << std::endl;
-		//Has jump force reduced to zero?
-		if (mJumpForce <= 0.0f)
+
+
+		if (mJumping)
 		{
+			//Adjust position
+			mPosition.y -= mJumpForce * deltaTime;
+			//Reduce the jump force
+			mJumpForce -= JUMP_FORCE_DECREMENT * deltaTime;
+			//std::cout << mPosition.y << std::endl;
+			//Has jump force reduced to zero?
+			if (mJumpForce <= 0.0f)
+			{
+				mJumping = false;
+			}
+		}
+
+		//Collision Position Variables
+		int centralXPosition = (int)(mPosition.x + (mTexture->GetWidth() * 0.5f)) / TILE_WIDTH;
+		int footPosition = (int)(mPosition.y + mTexture->GetHeight()) / TILE_HEIGHT;
+
+		//Deal with gravity
+		if (mCurrentLevelMap->GetTileAt(footPosition, centralXPosition) == 0)
+		{
+			AddGravity(deltaTime);
+		}
+		else
+		{
+			//Collided with ground so can jump again
+			mCanJump = true;
 			mJumping = false;
 		}
-	}
-
-	//Collision Position Variables
-	int centralXPosition = (int)(mPosition.x + (mTexture->GetWidth() * 0.5f)) / TILE_WIDTH;
-	int footPosition = (int)(mPosition.y + mTexture->GetHeight()) / TILE_HEIGHT;
-
-	//Deal with gravity
-	if (mCurrentLevelMap->GetTileAt(footPosition, centralXPosition) == 0)
-	{
-		AddGravity(deltaTime);
-	}
-	else
-	{
-		//Collided with ground so can jump again
-		mCanJump = true;
-		mJumping = false;
-	}
 
 
-	Character::Update(deltaTime, e);
-	
-	switch (e.type)
-	{
-	case SDL_KEYDOWN:
-		switch (e.key.keysym.sym)
+		Character::Update(deltaTime, e);
+
+		switch (e.type)
 		{
-		case SDLK_LEFT:
-			mMovingRight = false;
-			mMovingLeft = true;
+		case SDL_KEYDOWN:
+			switch (e.key.keysym.sym)
+			{
+			case SDLK_LEFT:
+				mMovingRight = false;
+				mMovingLeft = true;
+				break;
+			case SDLK_RIGHT:
+				mMovingLeft = false;
+				mMovingRight = true;
+				break;
+			case SDLK_BACKSLASH:
+				//mPosition.y -= 50;
+				Jump();
+				break;
+			}
 			break;
-		case SDLK_RIGHT:
-			mMovingLeft = false;
-			mMovingRight = true;
-			break;
-		case SDLK_BACKSLASH:
-			//mPosition.y -= 50;
-			Jump();
-			break;
+		case SDL_KEYUP:
+			switch (e.key.keysym.sym)
+			{
+			case SDLK_LEFT:
+				mMovingLeft = false;
+				break;
+			case SDLK_RIGHT:
+				mMovingRight = false;
+				break;
+			}
 		}
-		break;
-	case SDL_KEYUP:
-		switch (e.key.keysym.sym)
+		if (mPosition.x < 0)
 		{
-		case SDLK_LEFT:
 			mMovingLeft = false;
-			break;
-		case SDLK_RIGHT:
-			mMovingRight = false;
-			break;
 		}
-	}
-	if (mPosition.x < 0)
-	{
-		mMovingLeft = false;
-	}
-	else if (mPosition.x > SCREEN_WIDTH - mTexture->GetWidth())
-	{
-		mMovingRight = false;
+		else if (mPosition.x > SCREEN_WIDTH - mTexture->GetWidth())
+		{
+			mMovingRight = false;
+		}
 	}
 }

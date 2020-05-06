@@ -4,6 +4,7 @@
 #include "Collisions.h"
 #include "LuigiCharacter.h"
 #include "GamesScreenManager.h"
+#include "Constants.h"
 #include <fstream>
 #include <string>
 #include <iostream>
@@ -130,7 +131,7 @@ bool GameScreenLevel1::SetUpLevel()
 	//Set up the player character
 	mMarioCharacter = new MarioCharacter(mRenderer, "Images/Mario.png", Vector2D(64, 330), mLevelMap);
 	mLuigiCharacter = new LuigiCharacter(mRenderer, "Images/Luigi.png", Vector2D(100, 330), mLevelMap);
-
+	CharacterAlive = 2;
 
 	//Set up enemies
 	//CreateKoopa(Vector2D(100, 32), FACING_RIGHT, KOOPA_SPEED);
@@ -223,8 +224,8 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 		if (counter < 4)
 		{
 			//Set up enemies
-			CreateKoopa(Vector2D(30, 32), FACING_RIGHT, KOOPA_SPEED);
-			CreateKoopa(Vector2D(445, 32), FACING_LEFT, KOOPA_SPEED);
+			CreateKoopa(Vector2D(34, 20), FACING_RIGHT, KOOPA_SPEED);
+			CreateKoopa(Vector2D(445, 20), FACING_LEFT, KOOPA_SPEED);
 			counter++;
 		}
 		Timer = 50000;
@@ -259,30 +260,23 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 					if (mEnemies[i]->GetInjured())
 					{
 						mEnemies[i]->TakeDamage();
-						//mMarioCharacter->IncreaseScore();
 					}
 					else
 					{
-
+						mMarioCharacter->CharacterDeath();
 					}
 
-					//mEnemies[i]->TakeDamage();
-					//mMarioCharacter->SetState(CHARACTERSTATE_PLAYER_DEATH);
 				}
 				if (Collisions::Instance()->Circle(mEnemies[i], mLuigiCharacter))
 				{
 					if (mEnemies[i]->GetInjured())
 					{
 						mEnemies[i]->TakeDamage();
-						//mMarioCharacter->IncreaseScore();
 					}
 					else
 					{
-
+						mLuigiCharacter->CharacterDeath();
 					}
-
-					//mEnemies[i]->TakeDamage();
-					//mMarioCharacter->SetState(CHARACTERSTATE_PLAYER_DEATH);
 				}
 			}
 
@@ -300,6 +294,8 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 		}
 	}
 	Timer--;
+
+
 }
 
 

@@ -3,6 +3,7 @@
 #include "GameScreenIntro.h"
 #include "GameScreenLevel2.h"
 #include "GamesScreenManager.h"
+#include "GameScreenGameOver.h"
 #include <fstream>
 using namespace std;
 
@@ -56,7 +57,7 @@ void GameScreenManager::ChangeScreen(SCREENS newScreen)
 	GameScreenLevel1* lvl1Screen;
 	GameScreenIntro* introScreen;
 	GameScreenLevel2* lvl2Screen;
-	//GameScreenGameover* goScreen;
+	GameScreenGameOver* goScreen;
 	switch (newScreen)
 	{
 	case SCREEN_INTRO:
@@ -77,6 +78,9 @@ void GameScreenManager::ChangeScreen(SCREENS newScreen)
 		lvl2Screen = NULL;
 		break;
 	case SCREEN_GAMEOVER:
+		goScreen = new GameScreenGameOver(mRenderer);
+		mCurrentScreen = (GameScreen*)goScreen;
+		goScreen = NULL;
 		break;
 	case SCREEN_HIGHSCORES:
 		break;

@@ -5,6 +5,7 @@
 //SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map
 Character::Character(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map)
 {
+	Alive = true;
 	mCurrentLevelMap = map;
 	mRenderer = renderer;
 	mPosition = startPosition;
@@ -139,4 +140,11 @@ void Character::IncreaseScore()
 int Character::GetScore()
 {
 	return 0;
+}
+
+void Character::CharacterDeath()
+{
+	Alive = false;
+	mPosition.x = 1000.0f;
+	mPosition.y = 1000.0f;
 }

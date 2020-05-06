@@ -3,6 +3,7 @@
 #include "Commons.h"
 #include "GameScreen.h"
 #include "Character.h"
+#include "Constants.h"
 #include "KoopaCharacter.h"
 #include "CoinCharacter.h"
 #include "PowBlock.h"
@@ -32,6 +33,7 @@ private:
 	float mWobble;
 	float mBackgroundYPos;
 	float Timer;
+	int CharacterAlive;
 
 	void DoScreenshake();
 

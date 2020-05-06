@@ -26,6 +26,7 @@ public:
 	LevelMap* mCurrentLevelMap;
 	bool IsJumping();
 	void CancelJump();
+	void CharacterDeath();
 
 private:
 
@@ -45,6 +46,7 @@ protected:
 	FACING mFacingDirection;
 	bool mMovingLeft;
 	bool mMovingRight;
+	bool Alive;
 };
 
 class MarioCharacter : public Character
@@ -56,6 +58,7 @@ public:
 	void Render();
 	void IncreaseScore();
 	int GetScore();
+
 private:
 	int score;
 protected:

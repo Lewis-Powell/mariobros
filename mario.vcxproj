@@ -24,6 +24,7 @@
   <ItemGroup>
     <ClInclude Include="Character.h" />
     <ClInclude Include="CoinCharacter.h" />
+    <ClInclude Include="GameScreenGameOver.h" />
     <ClInclude Include="GameScreenIntro.h" />
     <ClInclude Include="GameScreenLevel2.h" />
     <ClInclude Include="KoopaCharacter.h" />
@@ -43,6 +44,7 @@
     <ClCompile Include="CoinCharacter.cpp" />
     <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="GameScreen.cpp" />
+    <ClCompile Include="GameScreenGameOver.cpp" />
     <ClCompile Include="GameScreenIntro.cpp" />
     <ClCompile Include="GameScreenLevel1.cpp" />
     <ClCompile Include="GameScreenLevel2.cpp" />
