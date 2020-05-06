@@ -54,6 +54,7 @@ public:
 	void Update(float deltaTime, SDL_Event e);
 	void Render();
 	void IncreaseScore();
+	int GetScore();
 private:
 	int score;
 protected:

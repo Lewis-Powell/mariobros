@@ -240,7 +240,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 					if (mEnemies[i]->GetInjured())
 					{
 						mEnemies[i]->TakeDamage();
-						mMarioCharacter->IncreaseScore();
+						//mMarioCharacter->IncreaseScore();
 					}
 					else
 					{
@@ -255,7 +255,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 					if (mEnemies[i]->GetInjured())
 					{
 						mEnemies[i]->TakeDamage();
-						mMarioCharacter->IncreaseScore();
+						//mMarioCharacter->IncreaseScore();
 					}
 					else
 					{
@@ -324,7 +324,10 @@ void GameScreenLevel1::UpdateCoins(float deltaTime, SDL_Event e)
 				if (Collisions::Instance()->Circle(mCoins[i], mMarioCharacter))
 				{
 					mCoins[i]->SetCollected(false);
-					//mMarioCharacter->SetState(CHARACTERSTATE_PLAYER_DEATH);
+				}
+				if (Collisions::Instance()->Circle(mCoins[i], mLuigiCharacter))
+				{
+					mCoins[i]->SetCollected(false);
 				}
 			}
 

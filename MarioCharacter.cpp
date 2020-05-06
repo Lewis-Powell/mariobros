@@ -99,3 +99,8 @@ void MarioCharacter::IncreaseScore()
 	score++;
 	std::cout << "Score: " << score << std::endl;
 }
+
+int MarioCharacter::GetScore()
+{
+	return score;
+}
