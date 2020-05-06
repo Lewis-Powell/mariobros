@@ -35,6 +35,7 @@ private:
 
 	void DoScreenshake();
 
+	int counter;
 
 	std::vector<KoopaCharacter*> mEnemies;
 

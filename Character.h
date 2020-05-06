@@ -18,6 +18,7 @@ public:
 	virtual void Render();
 	virtual void Update(float deltaTime, SDL_Event e);
 	virtual void IncreaseScore();
+	virtual int GetScore();
 	void SetPosition(Vector2D newPosition);
 	Vector2D GetPosition();
 	float GetCollisionRadius();

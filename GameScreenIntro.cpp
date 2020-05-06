@@ -12,7 +12,8 @@ GameScreenIntro::GameScreenIntro(SDL_Renderer* renderer) : GameScreen(renderer)
 
 GameScreenIntro::~GameScreenIntro()
 {
-
+	delete mBackgroundTexture;
+	mBackgroundTexture = NULL;
 }
 
 void GameScreenIntro::Render()

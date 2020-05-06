@@ -135,3 +135,8 @@ void Character::IncreaseScore()
 {
 
 }
+
+int Character::GetScore()
+{
+	return 0;
+}

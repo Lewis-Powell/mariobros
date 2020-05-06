@@ -11,6 +11,7 @@ GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer
 	mRenderer = renderer;
 	mLevelMap = NULL;
 	Timer = 0;
+	counter = 0;
 	SetUpLevel();
 
 }
@@ -29,6 +30,7 @@ GameScreenLevel1::~GameScreenLevel1()
 	mPowBlock = NULL;
 	mEnemies.clear();
 	mCoins.clear();
+
 }
 
 void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
@@ -65,6 +67,11 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 	UpdatePowBlock();
 	UpdateEnemies(deltaTime, e);
 	UpdateCoins(deltaTime, e);
+
+	if (mMarioCharacter->GetScore() >= 10)
+	{
+		std::cout << "You Got 10 Coins\n10 Coins!!!" << std::endl;
+	}
 }
 
 void GameScreenLevel1::Render()
@@ -205,9 +212,13 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 {
 	if (Timer <= 0)
 	{
-		//Set up enemies
-		CreateKoopa(Vector2D(30, 32), FACING_RIGHT, KOOPA_SPEED);
-		CreateKoopa(Vector2D(445, 32), FACING_LEFT, KOOPA_SPEED);
+		if (counter < 4)
+		{
+			//Set up enemies
+			CreateKoopa(Vector2D(30, 32), FACING_RIGHT, KOOPA_SPEED);
+			CreateKoopa(Vector2D(445, 32), FACING_LEFT, KOOPA_SPEED);
+			counter++;
+		}
 		Timer = 50000;
 	}
 	//Update Enemies
