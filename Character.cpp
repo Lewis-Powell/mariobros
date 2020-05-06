@@ -120,3 +120,8 @@ void Character::CancelJump()
 	mJumping = false;
 
 }
+
+void Character::IncreaseScore()
+{
+
+}

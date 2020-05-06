@@ -163,6 +163,7 @@ void GameScreenLevel1::UpdatePowBlock()
 			mPowBlock->TakeAHit();
 			mMarioCharacter->CancelJump();
 			DoScreenshake();
+			
 		}
 		
 	}
@@ -242,6 +243,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 		if (enemyIndexToDelete != -1)
 		{
 			mEnemies.erase(mEnemies.begin() + enemyIndexToDelete);
+			mMarioCharacter->IncreaseScore();
 		}
 	}
 	Timer--;

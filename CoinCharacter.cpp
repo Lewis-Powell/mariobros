@@ -24,8 +24,8 @@ CoinCharacter::~CoinCharacter()
 void CoinCharacter::TakeDamage()
 {
 	mNotCollected = false;
-	score++;
-	std::cout << "Score: " << score << std::endl;
+	//score++;
+	//std::cout << "Score: " << score << std::endl;
 }
 
 void CoinCharacter::Render()

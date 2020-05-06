@@ -1,11 +1,11 @@
 #include "Character.h"
 #include "Texture2D.h"
 #include <string.h>
-
+#include<iostream>
 
 MarioCharacter::MarioCharacter(SDL_Renderer* renderer, std::string imagePath, Vector2D startPosition, LevelMap* map) : Character(renderer, imagePath, startPosition, map)
 {
-
+	score = 0;
 }
 
 MarioCharacter::~MarioCharacter()
@@ -92,4 +92,10 @@ void MarioCharacter::Update(float deltaTime, SDL_Event e)
 	{
 		mMovingRight = false;
 	}
+}
+
+void MarioCharacter::IncreaseScore()
+{
+	score++;
+	std::cout << "Score: " << score << std::endl;
 }

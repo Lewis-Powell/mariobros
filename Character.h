@@ -17,6 +17,7 @@ public:
 
 	virtual void Render();
 	virtual void Update(float deltaTime, SDL_Event e);
+	virtual void IncreaseScore();
 	void SetPosition(Vector2D newPosition);
 	Vector2D GetPosition();
 	float GetCollisionRadius();
@@ -24,7 +25,6 @@ public:
 	LevelMap* mCurrentLevelMap;
 	bool IsJumping();
 	void CancelJump();
-	int score;
 
 private:
 
@@ -53,8 +53,9 @@ public:
 	~MarioCharacter();
 	void Update(float deltaTime, SDL_Event e);
 	void Render();
+	void IncreaseScore();
 private:
-
+	int score;
 protected:
 
 };

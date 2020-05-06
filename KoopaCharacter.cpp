@@ -26,6 +26,7 @@ void KoopaCharacter::TakeDamage()
 	{
 		//Insert code for killing the koopa
 		mAlive = false;
+		
 	}
 	else
 	{
