@@ -83,6 +83,14 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 		myfile.close();
 		std::cout << "You Got 10 Coins\n10 Coins!!!" << std::endl;
 	}
+	if (CharacterAlive == 0)
+	{
+		ofstream myfile;
+		myfile.open("TxtDocs/dead.txt");
+		myfile << "0";
+		myfile.close();
+		
+	}
 }
 
 void GameScreenLevel1::Render()
@@ -228,7 +236,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 			CreateKoopa(Vector2D(445, 20), FACING_LEFT, KOOPA_SPEED);
 			counter++;
 		}
-		Timer = 50000;
+		Timer = 10000;
 	}
 	//Update Enemies
 	if (!mEnemies.empty())
@@ -264,6 +272,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 					else
 					{
 						mMarioCharacter->CharacterDeath();
+						CharacterAlive--;
 					}
 
 				}
@@ -276,6 +285,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 					else
 					{
 						mLuigiCharacter->CharacterDeath();
+						CharacterAlive--;
 					}
 				}
 			}

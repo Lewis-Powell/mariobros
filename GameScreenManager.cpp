@@ -45,6 +45,19 @@ void GameScreenManager::Update(float deltaTime, SDL_Event e)
 		myfile << "11";
 		myfile.close();
 	}
+
+	infile.open("TxtDocs/dead.txt");
+	string dead;
+	getline(infile, dead);
+	infile.close();
+	if (dead == "0")
+	{
+		ChangeScreen(SCREEN_GAMEOVER);
+		ofstream myfile;
+		myfile.open("TxtDocs/dead.txt");
+		myfile << "2";
+		myfile.close();
+	}
 	mCurrentScreen->Update(deltaTime, e);
 }
 
