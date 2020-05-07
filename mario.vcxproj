@@ -26,6 +26,7 @@
     <ClInclude Include="CoinCharacter.h" />
     <ClInclude Include="GameScreenGameOver.h" />
     <ClInclude Include="GameScreenIntro.h" />
+    <ClInclude Include="GameScreenLevel1s.h" />
     <ClInclude Include="GameScreenLevel2.h" />
     <ClInclude Include="KoopaCharacter.h" />
     <ClInclude Include="Collisions.h" />
@@ -47,6 +48,7 @@
     <ClCompile Include="GameScreenGameOver.cpp" />
     <ClCompile Include="GameScreenIntro.cpp" />
     <ClCompile Include="GameScreenLevel1.cpp" />
+    <ClCompile Include="GameScreenLevel1s.cpp" />
     <ClCompile Include="GameScreenLevel2.cpp" />
     <ClCompile Include="GameScreenManager.cpp" />
     <ClCompile Include="KoopaCharacter.cpp" />

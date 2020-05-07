@@ -139,6 +139,9 @@ bool Update()
 		case SDLK_p:
 			gameScreenManager->ChangeScreen(SCREEN_LEVEL1);
 			break;
+		case SDLK_o:
+			gameScreenManager->ChangeScreen(SCREEN_LEVEL1S);
+			break;
 		}
 		break;
 	}
@@ -156,10 +159,7 @@ void Render()
 	SDL_RenderClear(gRenderer);
 	
 	gameScreenManager->Render();
-
-	//SDL_Rect renderLocation = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
-	//SDL_RenderCopyEx(gRenderer, gTexture, NULL, &renderLocation, 0, NULL, SDL_FLIP_NONE);
-	
+		
 	//Update Screen
 	SDL_RenderPresent(gRenderer);
 }
@@ -173,33 +173,3 @@ void LoadMusic(string path)
 		cout << "Failed to load background music. Error: " << Mix_GetError() << endl;
 	}
 }
-
-//SDL_Texture* LoadTextureFromFile(string path)//C:\Users\LJP67\source\repos\mario\mario\Images\test.bmp)
-//{
-//	//FreeTexture();
-//	SDL_Texture* pTexture = NULL;
-//	SDL_Surface* pSurface = IMG_Load(path.c_str());
-//	if (pSurface != NULL)
-//	{
-//		pTexture = SDL_CreateTextureFromSurface(gRenderer, pSurface);
-//		if (pTexture != NULL)
-//		{
-//			cout << "Unable to create texture from surface. Error: " << SDL_GetError() << endl;
-//		}
-//		else
-//		{
-//			cout << "Unable to create texture from surface. Error: " << IMG_GetError() << endl;
-//		}
-//	}
-//	SDL_FreeSurface(pSurface);
-//	return pTexture;
-//}
-
-//void FreeTexture()
-//{
-//	if (gTexture != NULL)
-//	{
-//		SDL_DestroyTexture(gTexture);
-//		gTexture = NULL;
-//	}
-//}
